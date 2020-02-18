@@ -68,12 +68,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAXMATERIAL
-    second: {fileID: 2100000, guid: 5d8ef28444742a74682ecc370cf613af, type: 2}
+    second: {fileID: 2100000, guid: 38fdce8cb3ba7f74391af623a8fd2f19, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: backpack
-    second: {fileID: 2100000, guid: c035abdb38dec9f478cc5e476361f714, type: 2}
+    second: {fileID: 2100000, guid: d0e4ccce15906174e90c9a747c18dddb, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -93,7 +93,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -142,7 +142,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -386,10 +386,10 @@ ModelImporter:
     globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

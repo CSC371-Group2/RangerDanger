@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public GameObject ViewCamera = null;
-    public GameObject PointLight = null;
+    //adjusting camera angle
     public float yMult;
     public float zMult;
-    public Vector3 lightPos;
-    public float moveSpeed = 5f;
-    public Rigidbody rb;
-    Vector3 movement;
 
-    // Update is called once per frame
+    public float movementSpeed = 4.0f;
+    public float rotationSpeed = 0.10f;
+
+    private Vector3 movement;
+    private Rigidbody rb;
+    private Animator animator;
+    private GameObject ViewCamera = null;
+
+    void Start()
+    {
+        ViewCamera = GameObject.Find("PlayerCamera");
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -33,14 +42,19 @@ public class PlayerMovement : MonoBehaviour
             }
             ViewCamera.transform.LookAt(transform.position);
         }
-        if (PointLight != null)
-        {
-            PointLight.transform.position = transform.position + lightPos;
-        }
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+        if (movement != Vector3.zero)
+        {
+            animator.SetBool("isWalking", true);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), rotationSpeed);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 }
