@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        depletionRate = lantern.intensity/5;
         float oldOil = oilSlider.value;
         if (outOfOil == false)
         {
