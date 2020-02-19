@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 797559403}
   - component: {fileID: 796200683}
   m_Layer: 0
-  m_Name: BallPrefab
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5479d13a608f99e4baf825fbea6b589a, type: 2}
+  - {fileID: 2100000, guid: 98189d553b7404d8290e447fb600ac6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
