@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1129888406}
+      - m_Target: {fileID: 0}
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1129888405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585726b33f65546e1976f7d69754e8c7, type: 3}
+  m_Script: {fileID: 11500000, guid: f14c7091847c74d129e94832c6d57211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   oilSlider: {fileID: 1701644448}
