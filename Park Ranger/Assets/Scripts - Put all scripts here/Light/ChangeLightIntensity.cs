@@ -13,8 +13,8 @@ public class ChangeLightIntensity : MonoBehaviour
     void Start()
     {
         lght_src = GetComponent<Light>();
-        lght_max = 6f - lght_incr;
-        lght_min = 0f + lght_incr;
+        lght_max = 8f - lght_incr;
+        lght_min = 2f + lght_incr;
     }
 
     // Update is called once per frame
