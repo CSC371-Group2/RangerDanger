@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool outOfOil;
     public GameObject deathScreen;
     public float depletionRate = 5.0f;
+    public float oilUp = 20;
     // Start is called before the first frame update
     void Start()
     {
