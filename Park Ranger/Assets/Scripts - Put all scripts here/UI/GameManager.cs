@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
             {
                 FixPercentage(Mathf.FloorToInt(oilSlider.value));
             }
-            if(oilSlider.value == 0)
+            if(oilSlider.value <= 0)
             {
                 outOfOil = true;
             }
