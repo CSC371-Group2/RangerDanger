@@ -1375,6 +1375,8 @@ MonoBehaviour:
   outOfOil: 0
   deathScreen: {fileID: 427955525}
   depletionRate: 5
+  player: {fileID: 3420922494437035889}
+  torch: {fileID: 6249983865544119727, guid: c019428f0753f97449bb7bf2ab515109, type: 3}
 --- !u!4 &1129888407
 Transform:
   m_ObjectHideFlags: 0
@@ -3072,6 +3074,7 @@ GameObject:
   - component: {fileID: 8296172668676209763}
   - component: {fileID: 3420922494437035890}
   - component: {fileID: 3420922494437035891}
+  - component: {fileID: 3420922494437035892}
   m_Layer: 8
   m_Name: Ranger D. Danger
   m_TagString: Untagged
@@ -3114,6 +3117,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3420922494437035892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420922494437035889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c51dc04094ad64dbc62da4023f40f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3421550355562318688
 GameObject:
   m_ObjectHideFlags: 0
