@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1811246647125409122}
   speed: 10
-  stoppingDistance: 4
+  stoppingDistance: 3
   detectDistance: 3
   playerLayer:
     serializedVersion: 2
@@ -1790,8 +1790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yMult: 5
-  zMult: 5
-  movementSpeed: 4
+  zMult: 2
+  movementSpeed: 3
   rotationSpeed: 0.1
 --- !u!95 &3420922494437035891
 Animator:
