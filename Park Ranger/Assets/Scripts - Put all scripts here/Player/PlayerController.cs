@@ -15,12 +15,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     private GameObject ViewCamera = null;
+    private GameManager gameManager;
+    private List<Color> matColors;
 
     void Start()
     {
         ViewCamera = GameObject.Find("PlayerCamera");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -56,5 +59,10 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        gameManager.oilSlider.value -= damage;
     }
 }

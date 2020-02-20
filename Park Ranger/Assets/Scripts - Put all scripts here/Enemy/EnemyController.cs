@@ -6,12 +6,15 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public List<Transform> waypoints;
-    public GameObject target;
-
+    public GameObject player;
+    public Transform eye;
     public float detectionDistance;
+    public float damage;
+
     private int destIndex = 0;
     private NavMeshAgent agent;
     private bool patrolling = true;
+    private bool attacking = false;
     private IEnumerator navigate;
 
     void Start()
@@ -22,29 +25,34 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agent.pathPending)
-            return;
-
-        if (patrolling)
+        if (!attacking)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (agent.pathPending)
             {
-                navigate = GoToNextPoint();
-                StartCoroutine(navigate);
+                return;
             }
-        }
 
-        if (DetectTarget())
-        {
-            agent.SetDestination(target.transform.position);
-            patrolling = false;
-        }
-        else
-        {
-            if (!patrolling)
+            if (patrolling)
             {
-                navigate = GoToNextPoint();
-                StartCoroutine(navigate);
+                if (agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    navigate = GoToNextPoint();
+                    StartCoroutine(GoToNextPoint());
+                }
+            }
+
+            if (DetectPlayer())
+            {
+                agent.SetDestination(player.transform.position);
+                patrolling = false;
+            }
+            else
+            {
+                if (!patrolling)
+                {
+                    navigate = GoToNextPoint();
+                    StartCoroutine(navigate);
+                }
             }
         }
     }
@@ -57,25 +65,33 @@ public class EnemyController : MonoBehaviour
         }
 
         destIndex = (destIndex + 1) % waypoints.Count;
-        //Debug.Log($"{destIndex}");
         agent.destination = waypoints[destIndex].position;
         agent.isStopped = true;
         yield return new WaitForSeconds(2f);
         agent.isStopped = false;
     }
 
-    bool DetectTarget()
+    IEnumerator AttackPlayer()
     {
-        if (target != null)
+        attacking = true;
+
+        yield return new WaitForSeconds(2f);
+
+        attacking = false;
+    }
+
+    bool DetectPlayer()
+    {
+        if (player != null)
         {
             bool canSee = false;
-            Ray ray = new Ray(transform.position, target.transform.position);
+            Ray ray = new Ray(eye.position, player.transform.position - eye.position);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                canSee = (hit.transform == target) &&
-                    (Vector3.Distance(transform.position, target.transform.position) <= detectionDistance);
+                canSee = (hit.transform == player.transform) &&
+                    (Vector3.Distance(transform.position, player.transform.position) <= detectionDistance);
             }
 
             return canSee;
@@ -83,6 +99,15 @@ public class EnemyController : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            player.GetComponent<PlayerController>().TakeDamage(damage);
+            StartCoroutine(AttackPlayer());
         }
     }
 }
