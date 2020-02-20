@@ -8,7 +8,7 @@ public class OilCollecting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();    
+        gameManager = GameManager.instance; 
     }
 
     // Update is called once per frame

@@ -1375,6 +1375,8 @@ MonoBehaviour:
   outOfOil: 0
   deathScreen: {fileID: 427955525}
   depletionRate: 5
+  player: {fileID: 3420922494437035889}
+  torch: {fileID: 3041368485168702248, guid: e255734114370654688b7fdaa8457d5e, type: 3}
 --- !u!4 &1129888407
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,11 +1700,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6977740555754767942, guid: 642dd156d70ff05a1871c750ef6f90b8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8692361335473827420, guid: 642dd156d70ff05a1871c750ef6f90b8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e406e2e9ed9f62944923859956d1d8f2, type: 2}
+    - target: {fileID: 8692361335473827420, guid: 642dd156d70ff05a1871c750ef6f90b8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692361335473827420, guid: 642dd156d70ff05a1871c750ef6f90b8,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692361335473827420, guid: 642dd156d70ff05a1871c750ef6f90b8,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692361335473827420, guid: 642dd156d70ff05a1871c750ef6f90b8,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8860925709357081768, guid: 642dd156d70ff05a1871c750ef6f90b8,
         type: 3}
       propertyPath: m_Name
@@ -2119,7 +2146,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: 1, z: 0.05, w: 0.4}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3047,6 +3074,7 @@ GameObject:
   - component: {fileID: 8296172668676209763}
   - component: {fileID: 3420922494437035890}
   - component: {fileID: 3420922494437035891}
+  - component: {fileID: 3420922494437035892}
   m_Layer: 8
   m_Name: Ranger D. Danger
   m_TagString: Untagged
@@ -3089,6 +3117,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3420922494437035892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420922494437035889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c51dc04094ad64dbc62da4023f40f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3421550355562318688
 GameObject:
   m_ObjectHideFlags: 0
