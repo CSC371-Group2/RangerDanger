@@ -13,7 +13,11 @@ public class OilSpawner : MonoBehaviour
         oilLocs = GetComponentsInChildren<Transform>();
         foreach (Transform t in oilLocs)
         {
-            Instantiate(oil_prefab, t);
+            if (t != gameObject.transform)
+            {
+                Instantiate(oil_prefab, t);
+            }
+            
         }
     }
 
