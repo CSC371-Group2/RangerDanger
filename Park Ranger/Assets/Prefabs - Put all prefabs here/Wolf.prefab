@@ -2393,7 +2393,7 @@ Transform:
   m_GameObject: {fileID: 7156460641832056529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 7156460641831825521}
   - {fileID: 7156460641831778413}
@@ -2444,7 +2444,7 @@ MonoBehaviour:
   player: {fileID: 0}
   eye: {fileID: 7751935329808234891}
   detectionDistance: 10
-  damage: 0
+  damage: 10
 --- !u!195 &7156460642933178854
 NavMeshAgent:
   m_ObjectHideFlags: 0

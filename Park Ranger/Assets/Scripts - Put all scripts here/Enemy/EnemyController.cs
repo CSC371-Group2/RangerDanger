@@ -29,7 +29,6 @@ public class EnemyController : MonoBehaviour
         {
             if (agent.pathPending)
             {
-                //Debug.Log("not");
                 return;
             }
 
@@ -66,7 +65,6 @@ public class EnemyController : MonoBehaviour
         }
 
         destIndex = (destIndex + 1) % waypoints.Count;
-        //Debug.Log($"{destIndex}");
         agent.destination = waypoints[destIndex].position;
         agent.isStopped = true;
         yield return new WaitForSeconds(2f);
@@ -77,7 +75,7 @@ public class EnemyController : MonoBehaviour
     {
         attacking = true;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         attacking = false;
     }
@@ -92,8 +90,6 @@ public class EnemyController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                //Debug.Log(hit.transform.position);
-                //Debug.DrawRay(eye.position, player.transform.position - eye.position, Color.green);
                 canSee = (hit.transform == player.transform) &&
                     (Vector3.Distance(transform.position, player.transform.position) <= detectionDistance);
             }
@@ -110,7 +106,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //player.TakeDamage(damage);
+            player.GetComponent<PlayerController>().TakeDamage(damage);
             StartCoroutine(AttackPlayer());
         }
     }
