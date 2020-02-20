@@ -104,7 +104,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !attacking)
         {
             player.GetComponent<PlayerController>().TakeDamage(damage);
             StartCoroutine(AttackPlayer());
