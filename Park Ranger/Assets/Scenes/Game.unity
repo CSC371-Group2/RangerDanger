@@ -1376,7 +1376,7 @@ MonoBehaviour:
   deathScreen: {fileID: 427955525}
   depletionRate: 5
   player: {fileID: 3420922494437035889}
-  torch: {fileID: 6249983865544119727, guid: c019428f0753f97449bb7bf2ab515109, type: 3}
+  torch: {fileID: 3041368485168702248, guid: e255734114370654688b7fdaa8457d5e, type: 3}
 --- !u!4 &1129888407
 Transform:
   m_ObjectHideFlags: 0

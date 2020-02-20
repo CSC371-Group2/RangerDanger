@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
     public void PlaceTorch()
     {
         Debug.Log("gm here");
+        Debug.Log(player.transform.position);
         torches.Add(Instantiate(torch, player.transform.position, player.transform.rotation));
     }
 
