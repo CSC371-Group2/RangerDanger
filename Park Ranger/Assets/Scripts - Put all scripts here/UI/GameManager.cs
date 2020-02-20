@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // Singleton GameManager stuff
+    public static GameManager instance = null;
+
+
     public Slider oilSlider;
     public TextMeshProUGUI oilPercent;
     public float maxOil = 100;
@@ -15,9 +19,33 @@ public class GameManager : MonoBehaviour
     public bool outOfOil;
     public GameObject deathScreen;
     public float depletionRate = 5.0f;
+
+    // for placing and tracking torches in map
+    public GameObject player;
+    public GameObject torch;
+    public ArrayList torches = new ArrayList();
+
+
     // Start is called before the first frame update
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Object.Destroy(this);
+        }
+
+        // so the instance persists between scenes...
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
+        
+    
+
         isRunning = true;
         outOfOil = false;
         oilSlider.gameObject.SetActive(true);
@@ -52,6 +80,14 @@ public class GameManager : MonoBehaviour
             oilSlider.gameObject.SetActive(false);
         }
     }
+
+    public void PlaceTorch()
+    {
+        Debug.Log("gm here");
+        Debug.Log(player.transform.position);
+        torches.Add(Instantiate(torch, player.transform.position, player.transform.rotation));
+    }
+
 
     private void FixPercentage(int percent)
     {

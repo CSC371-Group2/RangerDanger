@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6759129469327107821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6759129469327107823}
+  - component: {fileID: 6759129469327107822}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6759129469327107823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759129469327107821}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 929, y: 318, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6759129469327107822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759129469327107821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585726b33f65546e1976f7d69754e8c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oilSlider: {fileID: 8093020039712817630, guid: d8eacf04516d35d4ca46f8ee4c9ebabb,
+    type: 3}
+  oilPercent: {fileID: 6741113621156335543, guid: a261d7fb9cd6c654daac9a338dbbf985,
+    type: 3}
+  maxOil: 100
+  lantern: {fileID: 7402580208440631656, guid: 162679bbf3eb74d43a3c5d9c45a408aa, type: 3}
+  isRunning: 0
+  outOfOil: 0
+  deathScreen: {fileID: 3967291208821094756, guid: 44b691b3bc3db3040abfe96b9de45519,
+    type: 3}
+  depletionRate: 5
+  player: {fileID: 0}
+  torch: {fileID: 0}
