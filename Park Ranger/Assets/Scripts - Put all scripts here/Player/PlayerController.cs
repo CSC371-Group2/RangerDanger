@@ -15,14 +15,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     private GameObject ViewCamera = null;
-    private GameManager gameManager;
 
     void Start()
     {
         ViewCamera = GameObject.Find("PlayerCamera");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -57,15 +55,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Oil Source"))
-        {
-            Destroy(other.gameObject);
-            gameManager.oilSlider.value += gameManager.oilUp;
         }
     }
 }
