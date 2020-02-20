@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         lantern.gameObject.SetActive(true);
         oilSlider.maxValue = maxOil;
         oilSlider.minValue = 0;
+        oilSlider.value = 100;
         oilSlider.value = maxOil;
         oilPercent.text = "Oil: " + oilSlider.value + "%"; 
     }
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("gm here");
         Debug.Log(player.transform.position);
         torches.Add(Instantiate(torch, player.transform.position, player.transform.rotation));
+        oilSlider.value -= 20;
     }
 
 
