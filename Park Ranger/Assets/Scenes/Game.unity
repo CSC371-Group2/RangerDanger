@@ -268,8 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1811246647125409122}
-  speed: 10
-  stoppingDistance: 3
+  speed: 0.02
+  stoppingDistance: 2
   detectDistance: 3
   playerLayer:
     serializedVersion: 2
@@ -1806,13 +1806,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oilSlider: {fileID: 1701644448}
   oilPercent: {fileID: 608394234}
-  maxOil: 100
-  lantern: {fileID: 2116961113}
-  isRunning: 0
-  outOfOil: 0
-  deathScreen: {fileID: 427955525}
-  depletionRate: 5
-  player: {fileID: 3420922494437035889}
   torch: {fileID: 3041368485168702248, guid: e255734114370654688b7fdaa8457d5e, type: 3}
 --- !u!4 &1129888407
 Transform:
