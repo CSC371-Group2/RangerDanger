@@ -13,18 +13,16 @@ public class GameManager : MonoBehaviour
 
     public Slider oilSlider;
     public TextMeshProUGUI oilPercent;
-    public float maxOil = 100;
-    public Light lantern;
-    public bool isRunning;
-    public bool outOfOil;
-    public GameObject deathScreen;
-    public float depletionRate = 5.0f;
 
     // for placing and tracking torches in map
-    public GameObject player;
     public GameObject torch;
-    public ArrayList torches = new ArrayList();
-
+    
+    private ArrayList torches = new ArrayList();
+    private Light lantern;
+    private bool outOfOil;
+    private GameObject deathScreen;
+    private Transform player;
+    private float depletionRate = GameSettings.oilDepleteRate;
 
     // Start is called before the first frame update
     void Awake()
@@ -43,17 +41,16 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
-    
+        lantern = GameObject.Find("Lantern").GetComponent<Light>();
+        deathScreen = GameObject.Find("Death Screen");
+        player = GameObject.Find("Ranger D. Danger").GetComponent<Transform>();
 
-        isRunning = true;
         outOfOil = false;
         oilSlider.gameObject.SetActive(true);
         lantern.gameObject.SetActive(true);
-        oilSlider.maxValue = maxOil;
+        oilSlider.maxValue = GameSettings.startingOil;
         oilSlider.minValue = 0;
-        oilSlider.value = 100;
-        oilSlider.value = maxOil;
+        oilSlider.value = GameSettings.startingOil;
         oilPercent.text = "Oil: " + oilSlider.value + "%"; 
     }
 
@@ -84,8 +81,6 @@ public class GameManager : MonoBehaviour
 
     public void PlaceTorch()
     {
-        Debug.Log("gm here");
-        Debug.Log(player.transform.position);
         torches.Add(Instantiate(torch, player.transform.position, player.transform.rotation));
         oilSlider.value -= 20;
     }
