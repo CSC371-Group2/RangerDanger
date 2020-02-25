@@ -1,3 +1,4 @@
+
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!84 &8400000
@@ -13,8 +14,8 @@ RenderTexture:
   m_ForcedFallbackFormat: 4
   m_DownscaleFallback: 0
   serializedVersion: 3
-  m_Width: 200
-  m_Height: 200
+  m_Width: 300
+  m_Height: 300
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthFormat: 0
@@ -35,3 +36,4 @@ RenderTexture:
     m_WrapW: 1
   m_Dimension: 2
   m_VolumeDepth: 1
+
