@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!84 &8400000
@@ -77,6 +78,8 @@ RenderTexture:
   m_VolumeDepth: 1
 >>>>>>> parent of 917d60a... Merge branch 'master' into lvl0
 =======
+=======
+>>>>>>> parent of 0453e11... hard maze griffin in
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!84 &8400000
@@ -114,4 +117,7 @@ RenderTexture:
     m_WrapW: 1
   m_Dimension: 2
   m_VolumeDepth: 1
+<<<<<<< HEAD
 >>>>>>> parent of 917d60a... Merge branch 'master' into lvl0
+=======
+>>>>>>> parent of 0453e11... hard maze griffin in
