@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     private GameObject deathScreen;
     private Transform player;
     private float depletionRate = GameSettings.oilDepleteRate;
+    private float oldOil;
+    private float oilIncrement = 20f;
 
     // Start is called before the first frame update
     void Awake()
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
         lantern = GameObject.Find("Lantern").GetComponent<Light>();
         deathScreen = GameObject.Find("Death Screen");
         player = GameObject.Find("Ranger D. Danger").GetComponent<Transform>();
-
+        oldOil = 100;
         outOfOil = false;
         oilSlider.gameObject.SetActive(true);
         lantern.gameObject.SetActive(true);
@@ -57,8 +59,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        check_oil_level();
+    }
+
+    private void check_oil_level()
+    {
         depletionRate = lantern.intensity/5;
-        float oldOil = oilSlider.value;
+        oldOil = oilSlider.value;
         if (outOfOil == false)
         {
             oilSlider.value -= (depletionRate * Time.deltaTime);
@@ -78,6 +85,31 @@ public class GameManager : MonoBehaviour
             oilSlider.gameObject.SetActive(false);
         }
     }
+
+    public bool incrementOil()
+    {
+        oldOil = oilSlider.value;
+        if (oldOil > (100 - oilIncrement))
+        {
+                if (oldOil >= 100)
+                {
+                        return false;
+                }
+                else
+                {
+                    oilSlider.value += (100 - oldOil);
+                    check_oil_level();
+                    return true;
+                }    
+        }
+        else
+        {
+            oilSlider.value += oilIncrement;
+            check_oil_level();
+            return true;
+        }        
+    }
+
 
     public void PlaceTorch()
     {

@@ -19,8 +19,18 @@ public class OilCollecting : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        
-        gameManager.oilSlider.value += 20;
+        bool success = gameManager.incrementOil();
+
+        if(success)
+        {
+                // disable gameObject
+                gameObject.SetActive(false);
+                // TODO set respawn time
+        }
+        else
+        {
+                // do nothing
+        }
+
     }
 }
