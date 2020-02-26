@@ -13,5 +13,7 @@ public class Sound
     [HideInInspector]
     public AudioSource source;
     public GameObject origin;
+    public bool autoPlay;
+    public bool loop;
 }
     
