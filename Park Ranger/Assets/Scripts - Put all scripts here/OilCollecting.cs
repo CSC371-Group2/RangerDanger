@@ -20,6 +20,7 @@ public class OilCollecting : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        
         gameManager.oilSlider.value += 20;
     }
 }
