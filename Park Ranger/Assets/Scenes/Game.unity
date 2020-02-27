@@ -3967,7 +3967,6 @@ GameObject:
   - component: {fileID: 3420922494437035890}
   - component: {fileID: 3420922494437035891}
   - component: {fileID: 3420922494437035892}
-  - component: {fileID: 3420922494437035893}
   m_Layer: 8
   m_Name: Ranger D. Danger
   m_TagString: Player
@@ -3988,7 +3987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yMult: 5
-  zMult: 2
+  zMult: 5
   movementSpeed: 3
   rotationSpeed: 0.1
 --- !u!95 &3420922494437035891
@@ -4020,18 +4019,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42c51dc04094ad64dbc62da4023f40f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3420922494437035893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3420922494437035889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f13190f4cf8f03389c52cda92f7d3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3421550355562318688
