@@ -33,16 +33,7 @@ public class PlayerController : MonoBehaviour
         if (ViewCamera != null)
         {
             Vector3 direction = (Vector3.up * yMult + Vector3.back * zMult) * 2;
-            RaycastHit hit;
-            Debug.DrawLine(transform.position, transform.position + direction, Color.red);
-            if (Physics.Linecast(transform.position, transform.position + direction, out hit))
-            {
-                ViewCamera.transform.position = hit.point;
-            }
-            else
-            {
-                ViewCamera.transform.position = transform.position + direction;
-            }
+            ViewCamera.transform.position = transform.position + direction;
             ViewCamera.transform.LookAt(transform.position);
         }
     }
