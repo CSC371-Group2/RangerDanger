@@ -1536,6 +1536,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5597873885120556448, guid: e47316f723b261c6e818121bf2702770,
+        type: 3}
+      propertyPath: oil_prefab
+      value: 
+      objectReference: {fileID: 7206824387922326082, guid: 26d8c863875f15c6b9fefb077c387672,
+        type: 3}
     - target: {fileID: 5597873885120556449, guid: e47316f723b261c6e818121bf2702770,
         type: 3}
       propertyPath: m_Name
@@ -3961,6 +3967,7 @@ GameObject:
   - component: {fileID: 3420922494437035890}
   - component: {fileID: 3420922494437035891}
   - component: {fileID: 3420922494437035892}
+  - component: {fileID: 3420922494437035893}
   m_Layer: 8
   m_Name: Ranger D. Danger
   m_TagString: Player
@@ -4013,6 +4020,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42c51dc04094ad64dbc62da4023f40f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3420922494437035893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420922494437035889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f13190f4cf8f03389c52cda92f7d3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3421550355562318688
