@@ -1847,6 +1847,7 @@ MonoBehaviour:
   oilSlider: {fileID: 1701644448}
   oilPercent: {fileID: 608394234}
   torch: {fileID: 3041368485168702248, guid: e255734114370654688b7fdaa8457d5e, type: 3}
+  deathScreen: {fileID: 427955525}
 --- !u!4 &1129888407
 Transform:
   m_ObjectHideFlags: 0

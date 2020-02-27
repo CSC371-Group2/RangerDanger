@@ -8,6 +8,7 @@ public static class GameSettings
     public static float oilPerTorch = 20f;
     public static float oilDepleteRate = 5f;
     public static float startingOil = 100f;
+    public static float torchDepletion = 20f;
 
     //camper
     public static float lerpSpeed = 0.02f; //between 0 and 1

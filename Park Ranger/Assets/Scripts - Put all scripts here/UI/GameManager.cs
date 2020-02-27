@@ -20,9 +20,10 @@ public class GameManager : MonoBehaviour
     private ArrayList torches = new ArrayList();
     private Light lantern;
     private bool outOfOil;
-    private GameObject deathScreen;
+    public GameObject deathScreen;
     private Transform player;
     private float depletionRate = GameSettings.oilDepleteRate;
+    private float torchDepletion = GameSettings.torchDepletion;
     private float oldOil;
     private float oilIncrement = 20f;
 
@@ -39,12 +40,12 @@ public class GameManager : MonoBehaviour
         }
 
         // so the instance persists between scenes...
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
         lantern = GameObject.Find("Lantern").GetComponent<Light>();
-        deathScreen = GameObject.Find("Death Screen");
+        // deathScreen = GameObject.Find("Death Screen");
         player = GameObject.Find("Ranger D. Danger").GetComponent<Transform>();
         oldOil = 100;
         outOfOil = false;
@@ -113,8 +114,12 @@ public class GameManager : MonoBehaviour
 
     public void PlaceTorch()
     {
-        torches.Add(Instantiate(torch, player.transform.position, player.transform.rotation));
-        oilSlider.value -= 20;
+        oldOil = oilSlider.value;
+        if(oldOil >= torchDepletion)
+        {
+            torches.Add(Instantiate(torch, player.transform.position + (player.transform.forward), player.transform.rotation));
+            oilSlider.value -= torchDepletion;
+        }
     }
 
 
