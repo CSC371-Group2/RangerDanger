@@ -11,19 +11,23 @@ public class OilSpawner : MonoBehaviour
     void Start()
     {
         oilLocs = GetComponentsInChildren<Transform>();
-        foreach (Transform t in oilLocs)
-        {
-            if (t != gameObject.transform)
-            {
-                Instantiate(oil_prefab, t);
-            }
-            
-        }
+        spawn_all_oil();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void spawn_all_oil()
+    {
+        foreach (Transform t in oilLocs)
+        {
+            if (t != gameObject.transform)
+            {
+                Instantiate(oil_prefab, t);
+            }
+        }
     }
 }
