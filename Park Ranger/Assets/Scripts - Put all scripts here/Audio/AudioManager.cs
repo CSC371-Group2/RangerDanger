@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
 
     private Sound[] autoPlays;
 
+    private int heartBeatCount = 0;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -43,18 +45,39 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         Play("BGM");
+        Play("MonoAmbience");
         StartCoroutine(autoPlaySound());
     }
 
     public void Play (string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        if (name == "Heartbeat")
         {
-            Debug.Log("Cannot find sound " + name);
-            return;
+            heartBeatCount++;
+            int whichSource = heartBeatCount % 3;
+            if (whichSource == 0)
+            {
+                Array.Find(sounds, sound => sound.name == "Heartbeat1").source.Play();
+            }
+            else if (whichSource == 1)
+            {
+                Array.Find(sounds, sound => sound.name == "Heartbeat2").source.Play();
+            }
+            else
+            {
+                Array.Find(sounds, sound => sound.name == "Heartbeat3").source.Play();
+            }
         }
-        s.source.Play();
+        else
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.Log("Cannot find sound " + name);
+                return;
+            }
+            s.source.Play();
+        } 
     }
 
     IEnumerator autoPlaySound()
@@ -63,7 +86,6 @@ public class AudioManager : MonoBehaviour
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minTimeBetweenAudio, maxTimeBetweenAudio));
             string name = autoPlays[UnityEngine.Random.Range(0, autoPlays.Length)].name;
-            Debug.Log(name);
             Play(name);
         }
     }

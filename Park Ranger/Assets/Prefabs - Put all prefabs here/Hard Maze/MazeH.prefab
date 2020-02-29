@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7073693189275468395}
+  - component: {fileID: 7789249891939367417}
   m_Layer: 0
   m_Name: Oil (6)
   m_TagString: Untagged
@@ -30,6 +31,63 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7789249891939367417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773741374257325789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1159990569948341374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4399257301240320228}
+  - component: {fileID: 6040109923809655017}
+  m_Layer: 0
+  m_Name: Oil (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4399257301240320228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159990569948341374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.38, y: -7.91, z: -27.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4295726106476878294}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6040109923809655017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159990569948341374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1178652538892043149
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,6 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8183590181704832614}
+  - component: {fileID: 3007599792538869682}
   m_Layer: 0
   m_Name: Oil (2)
   m_TagString: Untagged
@@ -60,6 +119,19 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3007599792538869682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178652538892043149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1870872509398628666
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +167,7 @@ Transform:
   - {fileID: 2815542928859779831}
   - {fileID: 8299559383420668593}
   - {fileID: 2761786459395676933}
+  - {fileID: 4716982562895071329}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,6 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6997162403540418095}
+  - component: {fileID: 3361828944053969474}
   m_Layer: 0
   m_Name: Supplies (1)
   m_TagString: Untagged
@@ -158,6 +232,19 @@ Transform:
   m_Father: {fileID: 8299559383420668593}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3361828944053969474
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653356448071150083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2754020784001227029
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7523078205848779013}
+  - component: {fileID: 5041794904262638415}
   m_Layer: 0
   m_Name: Oil (5)
   m_TagString: Untagged
@@ -188,6 +276,19 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5041794904262638415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754020784001227029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2954760268135888572
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2792288451945358116}
+  - component: {fileID: 7987203540225202522}
   m_Layer: 0
   m_Name: Oil (7)
   m_TagString: Untagged
@@ -218,6 +320,19 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7987203540225202522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2954760268135888572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3086575351719275677
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4243754619176791627}
+  - component: {fileID: 6379434872874521403}
   m_Layer: 0
   m_Name: Oil (3)
   m_TagString: Untagged
@@ -281,6 +397,19 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6379434872874521403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181109402708243847}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3332476563571084765
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6729291633824067337}
+  - component: {fileID: 4274098553694123127}
   m_Layer: 0
   m_Name: Supplies
   m_TagString: Untagged
@@ -311,6 +441,19 @@ Transform:
   m_Father: {fileID: 8299559383420668593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4274098553694123127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332476563571084765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4902841648608846680
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8428596065500012597}
+  - component: {fileID: 6656634237253895086}
   m_Layer: 0
   m_Name: Oil (1)
   m_TagString: Untagged
@@ -341,6 +485,19 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6656634237253895086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902841648608846680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5332763544083365069
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4364516923351661801}
+  - component: {fileID: 8163895921498701601}
   m_Layer: 0
   m_Name: Oil
   m_TagString: Untagged
@@ -371,6 +529,19 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8163895921498701601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332763544083365069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5946627643293410744
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2815542928859779831}
+  - component: {fileID: 2054779422622654506}
   m_Layer: 0
   m_Name: Tool_Loc
   m_TagString: Untagged
@@ -433,6 +605,19 @@ Transform:
   m_Father: {fileID: 5682482572268098788}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2054779422622654506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357631060840439355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7577325358148567160
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +768,50 @@ Transform:
   m_Father: {fileID: 5682482572268098788}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7728169480749106589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4716982562895071329}
+  - component: {fileID: 7324615082878938866}
+  m_Layer: 0
+  m_Name: start_block
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4716982562895071329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728169480749106589}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 26.29, y: 6.04, z: 35.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5682482572268098788}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7324615082878938866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728169480749106589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.341301, z: 5.1068687}
+  m_Center: {x: 0, y: 0.4030075, z: 0.2494793}
 --- !u!1 &8528798129222938926
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8528798129222938926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.014778, y: 5.3927026, z: 35.56563}
+  m_LocalPosition: {x: 23.83, y: 5.3927026, z: 35.56563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5682482572268098788}
@@ -665,6 +894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 442778195993522197}
+  - component: {fileID: 6427166329515215330}
   m_Layer: 0
   m_Name: Oil (4)
   m_TagString: Untagged
@@ -686,6 +916,19 @@ Transform:
   m_Father: {fileID: 4295726106476878294}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6427166329515215330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061435322656572696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9204295315524609802
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +964,7 @@ Transform:
   - {fileID: 7523078205848779013}
   - {fileID: 7073693189275468395}
   - {fileID: 2792288451945358116}
+  - {fileID: 4399257301240320228}
   m_Father: {fileID: 5682482572268098788}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1989,7 +2233,7 @@ PrefabInstance:
     - target: {fileID: 7731875924805066954, guid: 55e4e7908fdd8fe589416f7b9829a27e,
         type: 3}
       propertyPath: m_Name
-      value: Rock_Barrier (2)
+      value: Hazard_Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e4e7908fdd8fe589416f7b9829a27e, type: 3}
@@ -3266,6 +3510,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6698212493126897300, guid: 879972e8b0ca9adacbb1565c958d7a6c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e406e2e9ed9f62944923859956d1d8f2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879972e8b0ca9adacbb1565c958d7a6c, type: 3}
 --- !u!4 &9196477214494097704 stripped
@@ -4779,7 +5028,7 @@ PrefabInstance:
     - target: {fileID: 7731875924805066954, guid: 55e4e7908fdd8fe589416f7b9829a27e,
         type: 3}
       propertyPath: m_Name
-      value: Rock_Barrier
+      value: Supply_Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e4e7908fdd8fe589416f7b9829a27e, type: 3}
@@ -7704,7 +7953,7 @@ PrefabInstance:
     - target: {fileID: 7731875924805066954, guid: 55e4e7908fdd8fe589416f7b9829a27e,
         type: 3}
       propertyPath: m_Name
-      value: Rock_Barrier (1)
+      value: Exit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e4e7908fdd8fe589416f7b9829a27e, type: 3}
@@ -8677,6 +8926,10 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2326034, guid: a4a3c18518cae0f4c944edbbf351f464, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e406e2e9ed9f62944923859956d1d8f2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4a3c18518cae0f4c944edbbf351f464, type: 3}
 --- !u!4 &8780915324571656860 stripped
