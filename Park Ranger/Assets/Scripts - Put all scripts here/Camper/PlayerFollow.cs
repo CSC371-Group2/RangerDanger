@@ -25,7 +25,9 @@ public class PlayerFollow : MonoBehaviour
         Vector3 endPos = startPos + new Vector3(detectDistance, 0, 0);
         if ((Physics.Linecast(startPos, endPos, playerLayer)) && !foundPlayer)
         {
+            //Need to make this a "juicy" event
             foundPlayer = true;
+            GameManager.instance.UpdateObjectives("camperFound");
         }
     }
 
