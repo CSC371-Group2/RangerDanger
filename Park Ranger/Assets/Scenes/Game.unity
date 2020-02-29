@@ -1421,7 +1421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1067655171
 Light:
   m_ObjectHideFlags: 0
@@ -1978,6 +1978,30 @@ MonoBehaviour:
     origin: {fileID: 1346720322}
     autoPlay: 0
     loop: 1
+  - name: Heartbeat1
+    clip: {fileID: 8300000, guid: 873369b9b61d25a4a8c41236c02162e1, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 1346720322}
+    autoPlay: 0
+    loop: 0
+  - name: Heartbeat2
+    clip: {fileID: 8300000, guid: 873369b9b61d25a4a8c41236c02162e1, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 1346720322}
+    autoPlay: 0
+    loop: 0
+  - name: Heartbeat3
+    clip: {fileID: 8300000, guid: 873369b9b61d25a4a8c41236c02162e1, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 1346720322}
+    autoPlay: 0
+    loop: 0
 --- !u!4 &1183037700
 Transform:
   m_ObjectHideFlags: 0
