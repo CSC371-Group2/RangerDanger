@@ -10,16 +10,20 @@ public class EnemyController : MonoBehaviour
     public Transform eye;
     public float detectionDistance;
     public float damage;
+    public Animator animator;
 
     private int destIndex = 0;
     private NavMeshAgent agent;
     private bool patrolling = true;
     private bool attacking = false;
     private IEnumerator navigate;
+    private Rigidbody rb;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -55,6 +59,9 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+        animator.SetFloat("speed", agent.velocity.magnitude);
+        //Debug.Log(animator.GetFloat("speed"));
+        Debug.Log(agent.velocity.magnitude);
     }
 
     IEnumerator GoToNextPoint()
@@ -74,6 +81,7 @@ public class EnemyController : MonoBehaviour
     IEnumerator AttackPlayer()
     {
         attacking = true;
+        animator.SetTrigger("attack");
 
         yield return new WaitForSeconds(2f);
 
