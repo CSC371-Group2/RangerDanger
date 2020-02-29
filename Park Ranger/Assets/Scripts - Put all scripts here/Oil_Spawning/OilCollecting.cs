@@ -5,45 +5,45 @@ using UnityEngine;
 public class OilCollecting : MonoBehaviour
 {
     private GameManager gameManager;
-    private double time_passed = 0.0;
-    private double oil_respawn_interval = GameSettings.oil_respawn_interval;
+    private OilSpawner oil_spawner;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.instance; 
+        oil_spawner = transform.parent.gameObject.GetComponent<OilSpawner>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        // time passed for oil respawn logic
-        if(!gameObject.activeSelf)
-        {
-            time_passed += Time.deltaTime;
-        }
-        if(!gameObject.activeSelf && time_passed > oil_respawn_interval)
-        {
-            gameObject.SetActive(true);
-            
-        }
-    }
-
+    {}
 
     public void OnTriggerEnter(Collider other)
     {
-        bool success = gameManager.incrementOil();
-        if(success)
+        if(other.CompareTag("Player"))
         {
-                // disable gameObject
-                gameObject.SetActive(false);
-                // TODO set respawn time
-                time_passed = 0.0;
-        }
-        else
-        {
+            bool success = gameManager.incrementOil();
+            if(success)
+            {
+                // disable oil
+                disableOil();
+            }
+            else
+            {
                 // do nothing
+            }
         }
+    }
 
+    public void enableOil()
+    {
+        gameObject.SetActive(true);
+    }
+
+    private void disableOil()
+    {
+        //tell parent to start respawn logic
+        oil_spawner.start_respawn(enableOil);
+        gameObject.SetActive(false);
     }
 }

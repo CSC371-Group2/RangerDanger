@@ -92,16 +92,16 @@ public class GameManager : MonoBehaviour
         oldOil = oilSlider.value;
         if (oldOil > (100 - oilIncrement))
         {
-                if (oldOil >= 100)
-                {
-                        return false;
-                }
-                else
-                {
-                    oilSlider.value += (100 - oldOil);
-                    check_oil_level();
-                    return true;
-                }    
+            if (oldOil >= 100)
+            {
+                    return false;
+            }
+            else
+            {
+                oilSlider.value += (100 - oldOil);
+                check_oil_level();
+                return true;
+            }    
         }
         else
         {
