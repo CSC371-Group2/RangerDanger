@@ -78,6 +78,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         attacking = false;
+        player.GetComponent<PlayerController>().Disenagage();
     }
 
     bool DetectPlayer()

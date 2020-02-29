@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
     private GameManager gameManager;
     private List<Color> matColors;
 
+    private int heartBeatPerMinute = 80;
+
     void Start()
     {
         ViewCamera = GameObject.Find("PlayerCamera");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        StartCoroutine(playHeartBeat());
     }
 
     void Update()
@@ -52,8 +55,47 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void controlHeartBeatSFX()
+    {
+
+    }
+
     public void TakeDamage(float damage)
     {
         gameManager.oilSlider.value -= damage;
+        StartCoroutine(increaseHeartBeat(180));
+    }
+
+    public void Disenagage()
+    {
+        StartCoroutine(decreaseHeartBeat(70));
+    }
+
+    IEnumerator increaseHeartBeat(int targetHeartBeat)
+    {
+        while(heartBeatPerMinute < targetHeartBeat)
+        {
+            heartBeatPerMinute += 10;
+            yield return null;
+            
+        }
+    }
+
+    IEnumerator decreaseHeartBeat(int targetHeartBeat)
+    {
+        while ( heartBeatPerMinute > targetHeartBeat)
+        {
+            yield return new WaitForSeconds(0.1f);
+            heartBeatPerMinute -= 5;
+        }
+    }
+
+    IEnumerator playHeartBeat()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(60f / heartBeatPerMinute);
+            AudioManager.instance.Play("Heartbeat");
+        }
     }
 }
