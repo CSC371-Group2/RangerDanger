@@ -62,10 +62,9 @@ public class PlayerController : MonoBehaviour
 
     void onTriggerEnter(Collider other)
     {
-        if(other.tag == FINISH_TAG)
+        if(other.tag == FINISH_TAG && gm.check_win_condition())
         {
-            gm.check_win_condition();
-            gm.deathScreen.SetActive(true);
+            gm.escape();
         }
     }
 
