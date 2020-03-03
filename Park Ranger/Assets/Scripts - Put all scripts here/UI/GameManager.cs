@@ -79,6 +79,10 @@ public class GameManager : MonoBehaviour
     {
         check_oil_level();
         DisplayObjectives();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            incrementOil();
+        }
     }
 
     private level whichSceneAmI()
