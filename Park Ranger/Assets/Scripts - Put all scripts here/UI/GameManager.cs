@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private float oldOil;
     private float oilIncrement = 20f;
 
+    public bool is_camper_following = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -70,6 +72,16 @@ public class GameManager : MonoBehaviour
     {
         check_oil_level();
         DisplayObjectives();
+    }
+
+    public void escape()
+    {
+        
+    }
+
+    public bool check_win_condition()
+    {
+        return is_camper_following;
     }
 
     private void check_oil_level()
