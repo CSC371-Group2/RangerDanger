@@ -20,8 +20,12 @@ public class PlayerController : MonoBehaviour
 
     private int heartBeatPerMinute = 80;
 
+    private string FINISH_TAG = "Finish";
+    private GameManager gm;
     void Start()
     {
+        gm = GameManager.instance;
+
         ViewCamera = GameObject.Find("PlayerCamera");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -52,6 +56,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
+        }
+    }
+
+
+    void onTriggerEnter(Collider other)
+    {
+        if(other.tag == FINISH_TAG && gm.check_win_condition())
+        {
+            gm.escape();
         }
     }
 
