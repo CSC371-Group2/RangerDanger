@@ -30,6 +30,14 @@ public class GameManager : MonoBehaviour
     private float oldOil;
     private float oilIncrement = 20f;
 
+    public bool is_camper_following = false;
+    private level current;
+
+    public enum level
+    {
+        TUTORIAL, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, LEVEL_FOUR, LOADING
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -63,6 +71,7 @@ public class GameManager : MonoBehaviour
         oilPercent.text = "Oil: " + oilSlider.value + "%";
 
 
+        current = whichSceneAmI();
     }
 
     // Update is called once per frame
@@ -70,6 +79,50 @@ public class GameManager : MonoBehaviour
     {
         check_oil_level();
         DisplayObjectives();
+    }
+
+    private level whichSceneAmI()
+    {
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            return level.TUTORIAL;
+        }
+        else if (SceneManager.GetActiveScene().name == "Game")
+        {
+            return level.LEVEL_ONE;
+        }
+        else
+        {
+            return level.LOADING;
+        }
+    }
+
+    public void escape()
+    {
+        switch(current)
+        {
+            case level.TUTORIAL:
+                SceneManager.LoadScene("Game");
+                break;
+            case level.LEVEL_ONE:
+                SceneManager.LoadScene("Menu");
+                break;
+            default:
+                break;
+        }
+    }
+
+    public bool check_win_condition()
+    {
+        switch (current)
+        {
+            case level.TUTORIAL:
+                return true;
+            case level.LEVEL_ONE:
+                return is_camper_following;
+            default:
+                return false;
+        }
     }
 
     private void check_oil_level()

@@ -12,9 +12,12 @@ public class PlayerFollow : MonoBehaviour
     private float stoppingDistance = GameSettings.stopDist;
     private bool foundPlayer = false;
 
+    private GameManager gm;
+
 
     private void Start()
     {
+        gm = GameManager.instance;
         player = GameObject.Find("Ranger D. Danger").GetComponent<Transform>();
     }
 
@@ -27,6 +30,7 @@ public class PlayerFollow : MonoBehaviour
         {
             GameManager.instance.UpdateObjectives("camperFound");
             foundPlayer = true;
+            gm.is_camper_following = true;
         }
     }
 
