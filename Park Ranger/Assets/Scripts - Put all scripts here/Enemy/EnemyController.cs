@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
         }
         animator.SetFloat("speed", agent.velocity.magnitude);
         //Debug.Log(animator.GetFloat("speed"));
-        Debug.Log(agent.velocity.magnitude);
+        //Debug.Log(agent.velocity.magnitude);
     }
 
     IEnumerator GoToNextPoint()
