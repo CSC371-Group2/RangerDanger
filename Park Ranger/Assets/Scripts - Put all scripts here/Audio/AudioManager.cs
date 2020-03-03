@@ -14,7 +14,6 @@ public class AudioManager : MonoBehaviour
     private Sound[] autoPlays;
 
     private int heartBeatCount = 0;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,6 +46,11 @@ public class AudioManager : MonoBehaviour
         Play("BGM");
         Play("MonoAmbience");
         StartCoroutine(autoPlaySound());
+    }
+
+    private void LateUpdate()
+    {
+        transform.position = Camera.main.transform.position;
     }
 
     public void Play (string name)
