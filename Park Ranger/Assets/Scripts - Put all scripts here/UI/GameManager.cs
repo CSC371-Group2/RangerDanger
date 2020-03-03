@@ -154,6 +154,10 @@ public class GameManager : MonoBehaviour
                 // Level 1 objectives 
                 gameObjectives = LevelOneObjectives();
                 break;
+            case 3:
+                // tutorial
+                gameObjectives = LevelOneObjectives();
+                break;
             case 4:
                 gameObjectives = LevelTwoObjectives();
                 break;
