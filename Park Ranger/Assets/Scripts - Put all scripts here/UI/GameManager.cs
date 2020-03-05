@@ -244,16 +244,20 @@ public class GameManager : MonoBehaviour
         return objectiveStr;
     }
 
-    public void UpdateObjectives(string eventTitle)
+    public void UpdateObjectives(bool eventTitle)
     {
-        switch (eventTitle)
+        if (is_camper_following)
         {
-            case "camperFound":
-                objectiveList.Remove("Find the lost camper\n");
-                break;
-            default:
-                break;
+            objectiveList.Remove("Find the lost camper\n");
         }
+        //switch (eventTitle)
+        //{
+        //    case is_camper_following == true:
+        //        objectiveList.Remove("Find the lost camper\n");
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     public ArrayList LevelOneObjectives()
