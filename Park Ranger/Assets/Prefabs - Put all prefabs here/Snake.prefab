@@ -813,12 +813,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 0}
-  player: {fileID: 0}
   eye: {fileID: 3812595607585377741}
   detectionDistance: 2
   damage: 5
-  runSpeed: 1.5
-  walkSpeed: 0
+  runSpeed: 5
+  walkSpeed: 1
 --- !u!1 &8693855453330698890
 GameObject:
   m_ObjectHideFlags: 0

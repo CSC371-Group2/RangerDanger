@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public List<Transform> waypoints;
-    public GameObject player;
+    protected GameObject player;
     public Transform eye;
     public float detectionDistance;
     public float damage;
@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Ranger D. Danger");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         lantern = player.transform.Find("Lantern").GetComponent<Light>();
