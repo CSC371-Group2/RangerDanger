@@ -1133,10 +1133,10 @@ GameObject:
   - component: {fileID: 949197280250851498}
   - component: {fileID: 949197280250851499}
   - component: {fileID: 949197280250851496}
-  - component: {fileID: 949197280250851497}
+  - component: {fileID: 7142490756158368692}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1230,7 +1230,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &949197280250851497
+--- !u!114 &7142490756158368692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9083150167260080549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130076234bc73614296b6100abcf61e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 54579817a5d85a24fb2476990220d74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:

@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 491726399341071235}
   m_Layer: 0
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -815,7 +815,7 @@ MonoBehaviour:
   - {fileID: 0}
   player: {fileID: 0}
   eye: {fileID: 3812595607585377741}
-  detectionDistance: 5
+  detectionDistance: 2
   damage: 5
   runSpeed: 1.5
   walkSpeed: 0
