@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
     private float oilIncrement = 20f;
 
     public bool is_camper_following = false;
+    private int supply_count = 0;
+    private bool has_tool = false;
+
+
     private level current;
 
     public enum level
@@ -81,6 +85,11 @@ public class GameManager : MonoBehaviour
         DisplayObjectives();
     }
 
+    public void addSupply()
+    {
+        supply_count++;
+    }
+
     private level whichSceneAmI()
     {
         if (SceneManager.GetActiveScene().name == "Tutorial")
@@ -90,6 +99,10 @@ public class GameManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Game")
         {
             return level.LEVEL_ONE;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            return level.LEVEL_THREE;
         }
         else
         {
@@ -107,6 +120,8 @@ public class GameManager : MonoBehaviour
             case level.LEVEL_ONE:
                 SceneManager.LoadScene("Menu");
                 break;
+            case level.LEVEL_THREE:
+                SceneManager.LoadScene("Menu");
             default:
                 break;
         }
@@ -119,7 +134,9 @@ public class GameManager : MonoBehaviour
             case level.TUTORIAL:
                 return is_camper_following;
             case level.LEVEL_ONE:
-                return is_camper_following;
+                return is_camper_following && supply_count == 1;
+            case level.LEVEL_THREE:
+                return is_camper_following && supply_count == 2;
             default:
                 return false;
         }
