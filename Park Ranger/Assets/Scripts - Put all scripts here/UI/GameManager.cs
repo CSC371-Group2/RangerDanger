@@ -204,8 +204,8 @@ public class GameManager : MonoBehaviour
         switch (scene)
         {
             case 2:
-                // Level 1 objectives 
-                gameObjectives = LevelOneObjectives();
+                // Tutorial objectives 
+                gameObjectives = TutorialObjectives();
                 break;
             case 3:
                 // tutorial
@@ -260,7 +260,7 @@ public class GameManager : MonoBehaviour
         //}
     }
 
-    public ArrayList LevelOneObjectives()
+    public ArrayList TutorialObjectives()
     {
         ArrayList objectiveList = new ArrayList();
         objectiveList.Add("Find the lost camper\n");
@@ -268,10 +268,20 @@ public class GameManager : MonoBehaviour
         return objectiveList;
     }
 
+    public ArrayList LevelOneObjectives()
+    {
+        ArrayList objectiveList = new ArrayList();
+        objectiveList.Add("Find the lost camper\n");
+        objectiveList.Add("Find the axe to chop the tree (optional)");
+        objectiveList.Add("Escape the forest\n");
+        return objectiveList;
+    }
+
     public ArrayList LevelTwoObjectives()
     {
         ArrayList objectiveList = new ArrayList();
-        //add objectives
+        objectiveList.Add("Find the lost camper\n");
+        objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
 

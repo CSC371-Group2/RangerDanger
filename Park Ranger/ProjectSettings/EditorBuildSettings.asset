@@ -12,12 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: c9c0b0f7cb1166b418e7bfd5932ba1bd
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 5f66713930f36f84a865122d99889d76
-  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 1b05430d2b2ee41108facb948473267d
   - enabled: 1
     path: Assets/Scenes/Terry_Easy_Maze.unity
     guid: 8045ec42a2b5e4daca8e8e4531112d58
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 5f66713930f36f84a865122d99889d76
   m_configObjects: {}
