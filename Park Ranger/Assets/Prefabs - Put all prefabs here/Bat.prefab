@@ -1249,7 +1249,8 @@ MonoBehaviour:
   eye: {fileID: 6037743166066674759}
   detectionDistance: 100
   damage: 10
-  animator: {fileID: 0}
+  runSpeed: 10
+  walkSpeed: 10
 --- !u!1 &9090095927409544354
 GameObject:
   m_ObjectHideFlags: 0

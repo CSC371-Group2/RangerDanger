@@ -10,20 +10,20 @@ public class EnemyController : MonoBehaviour
     public Transform eye;
     public float detectionDistance;
     public float damage;
-    public Animator animator;
+    private Animator animator;
 
     private int destIndex = 0;
+    public float runSpeed;
+    public float walkSpeed;
     private NavMeshAgent agent;
     private bool patrolling = true;
     private bool attacking = false;
     private IEnumerator navigate;
-    private Rigidbody rb;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
             if (DetectPlayer())
             {
                 agent.SetDestination(player.transform.position);
+                agent.speed = runSpeed;
                 patrolling = false;
             }
             else
@@ -56,12 +57,12 @@ public class EnemyController : MonoBehaviour
                 {
                     navigate = GoToNextPoint();
                     StartCoroutine(navigate);
+                    agent.speed = walkSpeed;
+                    patrolling = true;
                 }
             }
         }
         animator.SetFloat("speed", agent.velocity.magnitude);
-        //Debug.Log(animator.GetFloat("speed"));
-        Debug.Log(agent.velocity.magnitude);
     }
 
     IEnumerator GoToNextPoint()
@@ -72,7 +73,7 @@ public class EnemyController : MonoBehaviour
         }
 
         destIndex = (destIndex + 1) % waypoints.Count;
-        agent.destination = waypoints[destIndex].position;
+        agent.SetDestination(waypoints[destIndex].position);
         agent.isStopped = true;
         yield return new WaitForSeconds(2f);
         agent.isStopped = false;
@@ -89,7 +90,7 @@ public class EnemyController : MonoBehaviour
         player.GetComponent<PlayerController>().Disenagage();
     }
 
-    bool DetectPlayer()
+    protected virtual bool DetectPlayer()
     {
         if (player != null)
         {
