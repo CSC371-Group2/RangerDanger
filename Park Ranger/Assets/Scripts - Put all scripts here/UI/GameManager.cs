@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
                 break;
             case level.LEVEL_THREE:
                 SceneManager.LoadScene("Menu");
+                break;
             default:
                 break;
         }

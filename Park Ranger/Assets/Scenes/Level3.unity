@@ -5995,6 +5995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6642689236215882759}
   - component: {fileID: 8192268372409247309}
+  - component: {fileID: 1328836911300838424}
   m_Layer: 0
   m_Name: Oil (5)
   m_TagString: Untagged
@@ -6002,6 +6003,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1328836911300838424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328836911300838423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1335588744606842406
 Transform:
   m_ObjectHideFlags: 0
@@ -6040,6 +6053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1057252147019166537}
   - component: {fileID: 7836416566018231865}
+  - component: {fileID: 1760159010565679238}
   m_Layer: 0
   m_Name: Oil (3)
   m_TagString: Untagged
@@ -6047,6 +6061,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1760159010565679238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760159010565679237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1907152026380538079
 GameObject:
   m_ObjectHideFlags: 0
@@ -6100,6 +6126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335588744606842406}
   - component: {fileID: 6525990891968103512}
+  - component: {fileID: 2110411008743926719}
   m_Layer: 0
   m_Name: Oil (7)
   m_TagString: Untagged
@@ -6107,6 +6134,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2110411008743926719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110411008743926718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &2158879523720741552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6229,6 +6268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5033114016290442084}
   - component: {fileID: 2158879523720741552}
+  - component: {fileID: 2599614184675729040}
   m_Layer: 0
   m_Name: Oil (2)
   m_TagString: Untagged
@@ -6236,6 +6276,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2599614184675729040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2599614184675729039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2617110531508468092
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668090046625418726}
   - component: {fileID: 7465282183441180139}
+  - component: {fileID: 2617110531508468093}
   m_Layer: 0
   m_Name: Oil (8)
   m_TagString: Untagged
@@ -6253,6 +6306,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2617110531508468093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2617110531508468092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &2939952878742715688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6625,6 +6690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6224549819200921449}
   - component: {fileID: 6363653272601339131}
+  - component: {fileID: 4536291134544903136}
   m_Layer: 0
   m_Name: Oil (6)
   m_TagString: Untagged
@@ -6632,6 +6698,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4536291134544903136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536291134544903135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4647295676040928575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6886,6 +6964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3633794682256321815}
   - component: {fileID: 7888376731507561696}
+  - component: {fileID: 5298601527063304219}
   m_Layer: 0
   m_Name: Oil (4)
   m_TagString: Untagged
@@ -6893,6 +6972,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5298601527063304219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5298601527063304218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5347961122448252338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15748,6 +15839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4661408243309755703}
   - component: {fileID: 7505768833514528428}
+  - component: {fileID: 8089205925891423835}
   m_Layer: 0
   m_Name: Oil (1)
   m_TagString: Untagged
@@ -15755,6 +15847,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8089205925891423835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089205925891423834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &8192268372409247309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16021,6 +16125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637580860343869931}
   - component: {fileID: 4972881604207485475}
+  - component: {fileID: 9099819223564280272}
   m_Layer: 0
   m_Name: Oil
   m_TagString: Untagged
@@ -16028,3 +16133,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9099819223564280272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9099819223564280271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab42152f0943459381492412846bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
