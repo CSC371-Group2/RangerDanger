@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         switch (current)
         {
             case level.TUTORIAL:
-                return true;
+                return is_camper_following;
             case level.LEVEL_ONE:
                 return is_camper_following;
             default:
