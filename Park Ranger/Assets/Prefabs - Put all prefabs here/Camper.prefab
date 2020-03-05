@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 225793250238064321}
   - component: {fileID: 167718885318717942}
   - component: {fileID: 1681400332523101300}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,26 +10,30 @@ public class EnemyController : MonoBehaviour
     public Transform eye;
     public float detectionDistance;
     public float damage;
-    public Animator animator;
+    private Animator animator;
+    private Light lantern;
 
     private int destIndex = 0;
+    private List<GameObject> encounteredTorches;
+    public float runSpeed;
+    public float walkSpeed;
     private NavMeshAgent agent;
     private bool patrolling = true;
     private bool attacking = false;
-    private IEnumerator navigate;
-    private Rigidbody rb;
+    private bool stunned = false;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
+        lantern = player.transform.Find("Lantern").GetComponent<Light>();
+        encounteredTorches = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!attacking)
+        if (!attacking && !stunned)
         {
             if (agent.pathPending)
             {
@@ -40,7 +44,6 @@ public class EnemyController : MonoBehaviour
             {
                 if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    navigate = GoToNextPoint();
                     StartCoroutine(GoToNextPoint());
                 }
             }
@@ -48,20 +51,20 @@ public class EnemyController : MonoBehaviour
             if (DetectPlayer())
             {
                 agent.SetDestination(player.transform.position);
+                agent.speed = runSpeed;
                 patrolling = false;
             }
             else
             {
                 if (!patrolling)
                 {
-                    navigate = GoToNextPoint();
-                    StartCoroutine(navigate);
+                    StartCoroutine(GoToNextPoint());
+                    agent.speed = walkSpeed;
+                    patrolling = true;
                 }
             }
         }
         animator.SetFloat("speed", agent.velocity.magnitude);
-        //Debug.Log(animator.GetFloat("speed"));
-        //Debug.Log(agent.velocity.magnitude);
     }
 
     IEnumerator GoToNextPoint()
@@ -72,7 +75,7 @@ public class EnemyController : MonoBehaviour
         }
 
         destIndex = (destIndex + 1) % waypoints.Count;
-        agent.destination = waypoints[destIndex].position;
+        agent.SetDestination(waypoints[destIndex].position);
         agent.isStopped = true;
         yield return new WaitForSeconds(2f);
         agent.isStopped = false;
@@ -89,7 +92,22 @@ public class EnemyController : MonoBehaviour
         player.GetComponent<PlayerController>().Disenagage();
     }
 
-    bool DetectPlayer()
+    IEnumerator GetStunned()
+    {
+        agent.velocity = Vector3.zero;
+        agent.isStopped = true;
+        animator.SetBool("isStunned", true);
+        stunned = true;
+        Debug.Log("Stunned");
+
+        yield return new WaitForSeconds(3f);
+
+        agent.isStopped = false;
+        animator.SetBool("isStunned", false);
+        stunned = false;
+    }
+
+    protected virtual bool DetectPlayer()
     {
         if (player != null)
         {
@@ -100,7 +118,7 @@ public class EnemyController : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 canSee = (hit.transform == player.transform) &&
-                    (Vector3.Distance(transform.position, player.transform.position) <= detectionDistance);
+                    (Vector3.Distance(transform.position, player.transform.position) <= detectionDistance * lantern.intensity);
             }
 
             return canSee;
@@ -113,10 +131,22 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && !attacking)
+        if (other.tag == "Player" && !attacking && !stunned)
         {
             player.GetComponent<PlayerController>().TakeDamage(damage);
             StartCoroutine(AttackPlayer());
         }
+    }
+
+    public void Stun(GameObject torch)
+    {
+        Debug.Log("Idk");
+        if (!encounteredTorches.Contains(torch) && !stunned)
+        {
+            Debug.Log("Does not Contain");
+            encounteredTorches.Add(torch);
+            StartCoroutine(GetStunned());
+        }
+        Debug.Log("Contain");
     }
 }

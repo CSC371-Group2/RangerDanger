@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3041368485064578536}
   - component: {fileID: 3041368485064578537}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3041368485168702249}
   - component: {fileID: 1311691561571591754}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torch 1
   m_TagString: Torch
   m_Icon: {fileID: 0}
@@ -122,6 +122,7 @@ Transform:
   - {fileID: 3041368485064578536}
   - {fileID: 3042800863591899439}
   - {fileID: 3041368484639108835}
+  - {fileID: 2416454110667296317}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -138,6 +139,63 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.0979762
   m_Center: {x: 0, y: 0.5979762, z: 0}
+--- !u!1 &6854440037748265533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2416454110667296317}
+  - component: {fileID: 364949157897619052}
+  - component: {fileID: 6420875613455868917}
+  m_Layer: 2
+  m_Name: AnimalTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2416454110667296317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854440037748265533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3041368485168702249}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &364949157897619052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854440037748265533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c1e1d796086a24ebcbe515a0183116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &6420875613455868917
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854440037748265533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3041368483804682819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,9 +203,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3041368485168702249}
     m_Modifications:
+    - target: {fileID: 1001005852633408, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230862096963796, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393688157360954, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497415103117672, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_Name
       value: Magic fire pro orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4274653050354540, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_LocalPosition.x
@@ -248,6 +326,10 @@ PrefabInstance:
     - target: {fileID: 191452, guid: 1a07870c4b0dfdd48a525670d6d9cb87, type: 3}
       propertyPath: m_Name
       value: Dead_Bush_a_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 191452, guid: 1a07870c4b0dfdd48a525670d6d9cb87, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 477566, guid: 1a07870c4b0dfdd48a525670d6d9cb87, type: 3}
       propertyPath: m_LocalPosition.x

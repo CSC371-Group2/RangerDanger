@@ -7073,7 +7073,7 @@ GameObject:
   - component: {fileID: 7730203329938116512}
   m_Layer: 0
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7136,9 +7136,10 @@ MonoBehaviour:
   - {fileID: 0}
   player: {fileID: 0}
   eye: {fileID: 7751935329808234891}
-  detectionDistance: 10
+  detectionDistance: 3
   damage: 10
-  animator: {fileID: 0}
+  runSpeed: 4
+  walkSpeed: 1
 --- !u!195 &7156460642933178854
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7149,7 +7150,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 2.5
   avoidancePriority: 50
   m_AngularSpeed: 120
