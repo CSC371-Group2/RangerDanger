@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 491726399341071235}
   m_Layer: 0
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -787,7 +787,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -815,9 +815,10 @@ MonoBehaviour:
   - {fileID: 0}
   player: {fileID: 0}
   eye: {fileID: 3812595607585377741}
-  detectionDistance: 5
+  detectionDistance: 2
   damage: 5
-  animator: {fileID: 0}
+  runSpeed: 1.5
+  walkSpeed: 0
 --- !u!1 &8693855453330698890
 GameObject:
   m_ObjectHideFlags: 0
