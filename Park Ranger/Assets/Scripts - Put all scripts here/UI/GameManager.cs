@@ -222,8 +222,8 @@ public class GameManager : MonoBehaviour
         switch (scene)
         {
             case 2:
-                // Level 1 objectives 
-                gameObjectives = LevelOneObjectives();
+                // Tutorial objectives 
+                gameObjectives = TutorialObjectives();
                 break;
             case 3:
                 // tutorial
@@ -262,19 +262,23 @@ public class GameManager : MonoBehaviour
         return objectiveStr;
     }
 
-    public void UpdateObjectives(string eventTitle)
+    public void UpdateObjectives(bool eventTitle)
     {
-        switch (eventTitle)
+        if (is_camper_following)
         {
-            case "camperFound":
-                objectiveList.Remove("Find the lost camper\n");
-                break;
-            default:
-                break;
+            objectiveList.Remove("Find the lost camper\n");
         }
+        //switch (eventTitle)
+        //{
+        //    case is_camper_following == true:
+        //        objectiveList.Remove("Find the lost camper\n");
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
-    public ArrayList LevelOneObjectives()
+    public ArrayList TutorialObjectives()
     {
         ArrayList objectiveList = new ArrayList();
         objectiveList.Add("Find the lost camper\n");
@@ -282,10 +286,20 @@ public class GameManager : MonoBehaviour
         return objectiveList;
     }
 
+    public ArrayList LevelOneObjectives()
+    {
+        ArrayList objectiveList = new ArrayList();
+        objectiveList.Add("Find the lost camper\n");
+        objectiveList.Add("Find the axe to chop the tree (optional)");
+        objectiveList.Add("Escape the forest\n");
+        return objectiveList;
+    }
+
     public ArrayList LevelTwoObjectives()
     {
         ArrayList objectiveList = new ArrayList();
-        //add objectives
+        objectiveList.Add("Find the lost camper\n");
+        objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
 
