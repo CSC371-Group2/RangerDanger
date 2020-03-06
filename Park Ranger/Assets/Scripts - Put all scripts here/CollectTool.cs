@@ -22,12 +22,12 @@ public class CollectTool : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.F)) 
         {
             GameManager.instance.pickupTool();
-            GameManager.instance.f_able = false; /* disable F prompt before we diable game object */
+            GameManager.instance.canF(false); /* disable F prompt before we diable game object */
             gameObject.SetActive(false);
         }
         else if (other.CompareTag("Player"))
         {
-            GameManager.instance.f_able = true; 
+            GameManager.instance.canF(true);
         }
     }
 
@@ -35,7 +35,7 @@ public class CollectTool : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.instance.f_able = false; /* disable F prompt when we leave pickup zone */
+            GameManager.instance.canF(false); /* disable F prompt when we leave pickup zone */
         }
     }
 

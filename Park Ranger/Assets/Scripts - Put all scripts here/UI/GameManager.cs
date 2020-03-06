@@ -25,13 +25,16 @@ public class GameManager : MonoBehaviour
     private bool outOfOil;
     public GameObject deathScreen;
     public GameObject F_PROMPT;
+    public GameObject NEED_TOOL_PROMPT;
+
     private Transform player;
     private float depletionRate = GameSettings.oilDepleteRate;
     private float torchDepletion = GameSettings.torchDepletion;
     private float oldOil;
     private float oilIncrement = 20f;
 
-    public bool f_able = false; /* should we display prompt to use 'F' to get tool */
+    private bool f_able = false; /* should we display prompt to use 'F' to get tool */
+    private bool need_tool = false; 
 
     public bool is_camper_following = false; 
     private int supply_count = 0; /* supplies gathered by player */
@@ -88,10 +91,10 @@ public class GameManager : MonoBehaviour
     {
         check_oil_level();
         DisplayObjectives();
-        shouldDisplayFPrompt();
+        shouldDisplayPrompts();
     }
 
-    private void shouldDisplayFPrompt()
+    private void shouldDisplayPrompts() /* display F/tool prompt for tools and barriers */
     {
         if(f_able)
         {
@@ -101,6 +104,25 @@ public class GameManager : MonoBehaviour
         {
             F_PROMPT.SetActive(false);
         }
+
+        if(need_tool)
+        {
+            NEED_TOOL_PROMPT.SetActive(true);
+        }
+        else
+        {
+            NEED_TOOL_PROMPT.SetActive(false);
+        }
+    }
+
+    public void canF(bool state)
+    {
+        f_able = state;
+    }
+
+    public void set_need_tool_prompt(bool state)
+    {
+        need_tool = state;
     }
 
     public void addSupply()

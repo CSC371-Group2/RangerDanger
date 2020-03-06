@@ -22,12 +22,16 @@ public class UnlockBarrier : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.F)
             && GameManager.instance.can_unlock())
         {
-            GameManager.instance.f_able = false; /* disable F prompt before we diable game object */
+            GameManager.instance.canF(false); /* disable F prompt before we diable game object */
             gameObject.SetActive(false);
         }
         else if (other.CompareTag("Player") && GameManager.instance.can_unlock())
         {
-            GameManager.instance.f_able = true; /* dipslay use F prompt */
+            GameManager.instance.canF(true); /* dipslay use F prompt */
+        }
+        else if (other.CompareTag("Player") && !GameManager.instance.can_unlock())
+        {
+            GameManager.instance.set_need_tool_prompt(true); 
         }
     }
 
@@ -35,7 +39,11 @@ public class UnlockBarrier : MonoBehaviour
     {
         if (other.CompareTag("Player") && GameManager.instance.can_unlock())
         {
-            GameManager.instance.f_able = false; /* disable F prompt when we leave pickup zone */
+            GameManager.instance.canF(false); /* disable F prompt when we leave pickup zone */
+        }
+        else if (other.CompareTag("Player") && !GameManager.instance.can_unlock())
+        {
+            GameManager.instance.set_need_tool_prompt(false);
         }
     }
 
