@@ -24,19 +24,27 @@ public class GameManager : MonoBehaviour
     private Light lantern;
     private bool outOfOil;
     public GameObject deathScreen;
+    public GameObject F_PROMPT;
+    public GameObject NEED_TOOL_PROMPT;
+
     private Transform player;
     private float depletionRate = GameSettings.oilDepleteRate;
     private float torchDepletion = GameSettings.torchDepletion;
     private float oldOil;
     private float oilIncrement = 20f;
 
-    public bool is_camper_following = false;
-    private int supply_count = 0;
-    private bool has_tool = false;
+    private bool f_able = false; /* should we display prompt to use 'F' to get tool */
+    private bool need_tool = false; 
 
+    public bool is_camper_following = false; 
+    private int supply_count = 0; /* supplies gathered by player */
+    private bool has_tool = false; /* true once we have the tool */
 
-    private level current;
-
+    /* current level described by the enum below 
+     * mostly for readability
+    */
+    private level current; 
+    
     public enum level
     {
         TUTORIAL, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, LEVEL_FOUR, LOADING
@@ -83,11 +91,53 @@ public class GameManager : MonoBehaviour
     {
         check_oil_level();
         DisplayObjectives();
+        shouldDisplayPrompts();
+    }
+
+    private void shouldDisplayPrompts() /* display F/tool prompt for tools and barriers */
+    {
+        if(f_able)
+        {
+            F_PROMPT.SetActive(true);
+        }
+        else
+        {
+            F_PROMPT.SetActive(false);
+        }
+
+        if(need_tool)
+        {
+            NEED_TOOL_PROMPT.SetActive(true);
+        }
+        else
+        {
+            NEED_TOOL_PROMPT.SetActive(false);
+        }
+    }
+
+    public void canF(bool state)
+    {
+        f_able = state;
+    }
+
+    public void set_need_tool_prompt(bool state)
+    {
+        need_tool = state;
     }
 
     public void addSupply()
     {
         supply_count++;
+    }
+
+    public void pickupTool()
+    {
+        has_tool = true;
+    }
+
+    public bool can_unlock()
+    {
+        return has_tool;
     }
 
     private level whichSceneAmI()
