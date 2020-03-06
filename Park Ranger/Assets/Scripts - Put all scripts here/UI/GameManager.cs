@@ -30,13 +30,15 @@ public class GameManager : MonoBehaviour
     private float oldOil;
     private float oilIncrement = 20f;
 
-    public bool is_camper_following = false;
-    private int supply_count = 0;
-    private bool has_tool = false;
+    public bool is_camper_following = false; 
+    private int supply_count = 0; /* supplies gathered by player */
+    private bool has_tool = false; /* true once we have the tool */
 
-
-    private level current;
-
+    /* current level described by the enum below 
+     * mostly for readability
+    */
+    private level current; 
+    
     public enum level
     {
         TUTORIAL, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, LEVEL_FOUR, LOADING
@@ -88,6 +90,16 @@ public class GameManager : MonoBehaviour
     public void addSupply()
     {
         supply_count++;
+    }
+
+    public void pickupTool()
+    {
+        has_tool = true;
+    }
+
+    public bool can_unlock()
+    {
+        return has_tool;
     }
 
     private level whichSceneAmI()
