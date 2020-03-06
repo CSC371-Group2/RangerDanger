@@ -22,8 +22,21 @@ public class CollectTool : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.F)) 
         {
             GameManager.instance.pickupTool();
+            GameManager.instance.f_able = false; /* disable F prompt before we diable game object */
             gameObject.SetActive(false);
         }
+        else if (other.CompareTag("Player"))
+        {
+            GameManager.instance.f_able = true; 
+        }
     }
-    
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            GameManager.instance.f_able = false; /* disable F prompt when we leave pickup zone */
+        }
+    }
+
 }

@@ -24,11 +24,14 @@ public class GameManager : MonoBehaviour
     private Light lantern;
     private bool outOfOil;
     public GameObject deathScreen;
+    public GameObject F_PROMPT;
     private Transform player;
     private float depletionRate = GameSettings.oilDepleteRate;
     private float torchDepletion = GameSettings.torchDepletion;
     private float oldOil;
     private float oilIncrement = 20f;
+
+    public bool f_able = false; /* should we display prompt to use 'F' to get tool */
 
     public bool is_camper_following = false; 
     private int supply_count = 0; /* supplies gathered by player */
@@ -85,6 +88,19 @@ public class GameManager : MonoBehaviour
     {
         check_oil_level();
         DisplayObjectives();
+        shouldDisplayFPrompt();
+    }
+
+    private void shouldDisplayFPrompt()
+    {
+        if(f_able)
+        {
+            F_PROMPT.SetActive(true);
+        }
+        else
+        {
+            F_PROMPT.SetActive(false);
+        }
     }
 
     public void addSupply()

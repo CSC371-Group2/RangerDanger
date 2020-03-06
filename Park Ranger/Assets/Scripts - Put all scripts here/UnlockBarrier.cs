@@ -22,7 +22,20 @@ public class UnlockBarrier : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.F)
             && GameManager.instance.can_unlock())
         {
+            GameManager.instance.f_able = false; /* disable F prompt before we diable game object */
             gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("Player") && GameManager.instance.can_unlock())
+        {
+            GameManager.instance.f_able = true; /* dipslay use F prompt */
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && GameManager.instance.can_unlock())
+        {
+            GameManager.instance.f_able = false; /* disable F prompt when we leave pickup zone */
         }
     }
 
