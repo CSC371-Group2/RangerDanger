@@ -16,7 +16,6 @@ public class PlaceTorch : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("space");
             gm.PlaceTorch();
         }
     }
