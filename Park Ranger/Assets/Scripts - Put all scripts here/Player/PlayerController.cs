@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
-        movement.Normalize(); // prevents diagonal movement from being faster
         if (ViewCamera != null)
         {
             Vector3 direction = (Vector3.up * yMult + Vector3.back * zMult) * 2;

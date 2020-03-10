@@ -68,8 +68,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        //objectiveList = LoadObjectives(currentScene.buildIndex);
-        objectiveList = LoadObjectives();
+        objectiveList = LoadObjectives(currentScene.buildIndex);
 
         lantern = GameObject.Find("Lantern").GetComponent<Light>();
         // deathScreen = GameObject.Find("Death Screen");
@@ -136,36 +135,6 @@ public class GameManager : MonoBehaviour
     public void addSupply()
     {
         supply_count++;
-        int totalSupplies = suppliesRequired(whichSceneAmI());
-        Debug.Log(totalSupplies);
-        if (supply_count == totalSupplies)
-        {
-            objectiveList.Remove("Find the supplies\n");
-            objectiveList.Remove("Find the supplies: 1/2 found");
-        }
-        else if (supply_count == 1)
-        {
-            objectiveList.Remove("Find the supplies\n");
-            objectiveList.Add("Find the supplies: 1/2 found");
-        }
-    }
-
-    public int suppliesRequired(level currentLevel)
-    {
-        int supplies;
-        switch (currentLevel)
-        {
-            case level.LEVEL_TWO: //Scene title: Game
-                supplies = 1;
-                break;
-            case level.LEVEL_THREE:
-                supplies = 2;
-                break;
-            default:
-                supplies = 0;
-                break;
-        }
-        return supplies;
     }
 
     public void pickupTool()
@@ -180,16 +149,15 @@ public class GameManager : MonoBehaviour
 
     private level whichSceneAmI()
     {
-        string sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName == "Tutorial")
+        if (SceneManager.GetActiveScene().name == "Tutorial")
         {
             return level.TUTORIAL;
         }
-        else if (sceneName == "Game")
+        else if (SceneManager.GetActiveScene().name == "Game")
         {
             return level.LEVEL_ONE;
         }
-        else if (sceneName == "Level3")
+        else if (SceneManager.GetActiveScene().name == "Level3")
         {
             return level.LEVEL_THREE;
         }
@@ -224,8 +192,6 @@ public class GameManager : MonoBehaviour
             case level.TUTORIAL:
                 return is_camper_following;
             case level.LEVEL_ONE:
-                return is_camper_following;
-            case level.LEVEL_TWO:
                 return is_camper_following && supply_count == 1;
             case level.LEVEL_THREE:
                 return is_camper_following && supply_count == 2;
@@ -309,29 +275,29 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-    
-    public ArrayList LoadObjectives()
+
+    public ArrayList LoadObjectives(int scene)
     {
         // likely will need two revise scene variables to match up
-        level currentLevel = whichSceneAmI();
         ArrayList gameObjectives = new ArrayList(); //arraylist holding all the objectives for each level
-        switch (currentLevel)
+
+        switch (scene)
         {
-            case level.TUTORIAL:
+            case 2:
                 // Tutorial objectives 
                 gameObjectives = TutorialObjectives();
                 break;
-            case level.LEVEL_ONE:
-                // level 1 objectives
+            case 3:
+                // tutorial
                 gameObjectives = LevelOneObjectives();
                 break;
-            case level.LEVEL_TWO:
+            case 4:
                 gameObjectives = LevelTwoObjectives();
                 break;
-            case level.LEVEL_THREE:
+            case 6:
                 gameObjectives = LevelThreeObjectives();
                 break;
-            case level.LEVEL_FOUR:
+            case 8:
                 gameObjectives = LevelFourObjectives();
                 break;
             default:
@@ -395,7 +361,6 @@ public class GameManager : MonoBehaviour
     {
         ArrayList objectiveList = new ArrayList();
         objectiveList.Add("Find the lost camper\n");
-        objectiveList.Add("Find the supplies\n");
         objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
@@ -403,10 +368,7 @@ public class GameManager : MonoBehaviour
     public ArrayList LevelThreeObjectives()
     {
         ArrayList objectiveList = new ArrayList();
-        objectiveList.Add("Find the lost campter\n");
-        objectiveList.Add("Escape the forest\n");
-        objectiveList.Add("Get through the barrier\n");
-        objectiveList.Add("Find the supplies\n");
+        //add objectives
         return objectiveList;
     }
 
