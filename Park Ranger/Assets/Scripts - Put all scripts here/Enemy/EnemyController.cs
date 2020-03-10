@@ -34,38 +34,42 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!attacking && !stunned)
+        if (agent.isOnNavMesh)
         {
-            if (agent.pathPending)
+            if (!attacking && !stunned)
             {
-                return;
-            }
-
-            if (patrolling)
-            {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                if (agent.pathPending)
                 {
-                    StartCoroutine(GoToNextPoint());
+                    return;
+                }
+
+                if (patrolling)
+                {
+                    if (agent.remainingDistance <= agent.stoppingDistance)
+                    {
+                        StartCoroutine(GoToNextPoint());
+                    }
+                }
+
+                if (DetectPlayer())
+                {
+                    agent.SetDestination(player.transform.position);
+                    agent.speed = runSpeed;
+                    patrolling = false;
+                }
+                else
+                {
+                    if (!patrolling)
+                    {
+                        StartCoroutine(GoToNextPoint());
+                        agent.speed = walkSpeed;
+                        patrolling = true;
+                    }
                 }
             }
-
-            if (DetectPlayer())
-            {
-                agent.SetDestination(player.transform.position);
-                agent.speed = runSpeed;
-                patrolling = false;
-            }
-            else
-            {
-                if (!patrolling)
-                {
-                    StartCoroutine(GoToNextPoint());
-                    agent.speed = walkSpeed;
-                    patrolling = true;
-                }
-            }
+            animator.SetFloat("speed", agent.velocity.magnitude);
         }
-        animator.SetFloat("speed", agent.velocity.magnitude);
+        
     }
 
     IEnumerator GoToNextPoint()
