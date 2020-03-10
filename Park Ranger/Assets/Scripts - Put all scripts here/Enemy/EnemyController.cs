@@ -134,7 +134,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player" && !attacking && !stunned)
         {
-            player.GetComponent<PlayerController>().TakeDamage(damage);
+            player.GetComponent<PlayerController>().TakeDamage(damage, gameObject.tag);
             StartCoroutine(AttackPlayer());
         }
     }
