@@ -73,10 +73,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, string typeOfEnemy)
     {
         gameManager.oilSlider.value -= damage;
         StartCoroutine(increaseHeartBeat(180));
+        if (typeOfEnemy == "Wolf")
+        {
+            AudioManager.instance.Play("WolfSnarl");
+        }
     }
 
     public void Disenagage()

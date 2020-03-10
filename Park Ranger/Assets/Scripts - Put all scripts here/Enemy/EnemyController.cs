@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     public Transform eye;
     public float detectionDistance;
     public float damage;
+    public AudioClip attackClip;
     private Animator animator;
     private Light lantern;
 
@@ -21,12 +22,14 @@ public class EnemyController : MonoBehaviour
     private bool patrolling = true;
     private bool attacking = false;
     private bool stunned = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         player = GameObject.Find("Ranger D. Danger");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         lantern = player.transform.Find("Lantern").GetComponent<Light>();
         encounteredTorches = new List<GameObject>();
     }
@@ -34,38 +37,42 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!attacking && !stunned)
+        if (agent.isOnNavMesh)
         {
-            if (agent.pathPending)
+            if (!attacking && !stunned)
             {
-                return;
-            }
-
-            if (patrolling)
-            {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                if (agent.pathPending)
                 {
-                    StartCoroutine(GoToNextPoint());
+                    return;
+                }
+
+                if (patrolling)
+                {
+                    if (agent.remainingDistance <= agent.stoppingDistance)
+                    {
+                        StartCoroutine(GoToNextPoint());
+                    }
+                }
+
+                if (DetectPlayer())
+                {
+                    agent.SetDestination(player.transform.position);
+                    agent.speed = runSpeed;
+                    patrolling = false;
+                }
+                else
+                {
+                    if (!patrolling)
+                    {
+                        StartCoroutine(GoToNextPoint());
+                        agent.speed = walkSpeed;
+                        patrolling = true;
+                    }
                 }
             }
-
-            if (DetectPlayer())
-            {
-                agent.SetDestination(player.transform.position);
-                agent.speed = runSpeed;
-                patrolling = false;
-            }
-            else
-            {
-                if (!patrolling)
-                {
-                    StartCoroutine(GoToNextPoint());
-                    agent.speed = walkSpeed;
-                    patrolling = true;
-                }
-            }
+            animator.SetFloat("speed", agent.velocity.magnitude);
         }
-        animator.SetFloat("speed", agent.velocity.magnitude);
+        
     }
 
     IEnumerator GoToNextPoint()
@@ -86,6 +93,7 @@ public class EnemyController : MonoBehaviour
     {
         attacking = true;
         animator.SetTrigger("attack");
+        audioSource.PlayOneShot(attackClip, 0.25f);
 
         yield return new WaitForSeconds(2f);
 
@@ -134,7 +142,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player" && !attacking && !stunned)
         {
-            player.GetComponent<PlayerController>().TakeDamage(damage);
+            player.GetComponent<PlayerController>().TakeDamage(damage, gameObject.tag);
             StartCoroutine(AttackPlayer());
         }
     }

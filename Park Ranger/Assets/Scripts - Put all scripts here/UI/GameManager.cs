@@ -121,23 +121,30 @@ public class GameManager : MonoBehaviour
 
     private void shouldDisplayPrompts() /* display F/tool prompt for tools and barriers */
     {
-        if(f_able)
+        if(F_PROMPT != null)
         {
-            F_PROMPT.SetActive(true);
+            if (f_able)
+            {
+                F_PROMPT.SetActive(true);
+            }
+            else
+            {
+                F_PROMPT.SetActive(false);
+            }
         }
-        else
+        
+        if (NEED_TOOL_PROMPT != null)
         {
-            F_PROMPT.SetActive(false);
+            if (need_tool)
+            {
+                NEED_TOOL_PROMPT.SetActive(true);
+            }
+            else
+            {
+                NEED_TOOL_PROMPT.SetActive(false);
+            }
         }
-
-        if(need_tool)
-        {
-            NEED_TOOL_PROMPT.SetActive(true);
-        }
-        else
-        {
-            NEED_TOOL_PROMPT.SetActive(false);
-        }
+        
     }
 
     public bool is_flare_active()
@@ -310,6 +317,11 @@ public class GameManager : MonoBehaviour
     {
         deathScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void loadMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     public ArrayList LoadObjectives(int scene)
