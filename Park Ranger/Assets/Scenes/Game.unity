@@ -632,14 +632,14 @@ RectTransform:
   m_GameObject: {fileID: 528769972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1292556294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000015258789}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528769974
@@ -677,7 +677,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528769972}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &530420382
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &608394232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2029,6 +2029,8 @@ MonoBehaviour:
   objectives: {fileID: 1720083401}
   torch: {fileID: 3041368485168702248, guid: e255734114370654688b7fdaa8457d5e, type: 3}
   deathScreen: {fileID: 427955525}
+  F_PROMPT: {fileID: 0}
+  NEED_TOOL_PROMPT: {fileID: 0}
   is_camper_following: 0
 --- !u!4 &1129888407
 Transform:

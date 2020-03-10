@@ -1931,6 +1931,8 @@ MonoBehaviour:
   objectives: {fileID: 462585033}
   torch: {fileID: 3041368485168702248, guid: e255734114370654688b7fdaa8457d5e, type: 3}
   deathScreen: {fileID: 1396596684}
+  F_PROMPT: {fileID: 0}
+  NEED_TOOL_PROMPT: {fileID: 0}
   is_camper_following: 0
 --- !u!4 &305804604
 Transform:
@@ -2338,7 +2340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &429307301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8202,7 +8204,7 @@ RectTransform:
   m_GameObject: {fileID: 1706132963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 212969006}
   m_RootOrder: 0
