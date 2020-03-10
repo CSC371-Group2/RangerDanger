@@ -271,6 +271,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void loadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     public ArrayList LoadObjectives(int scene)
     {
         // likely will need two revise scene variables to match up
