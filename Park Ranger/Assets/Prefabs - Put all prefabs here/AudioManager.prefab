@@ -164,3 +164,11 @@ MonoBehaviour:
     origin: {fileID: 8376350329986113216}
     autoPlay: 0
     loop: 0
+  - name: WolfSnarl
+    clip: {fileID: 8300000, guid: afb187fac2184b443ab92c9e96a4610e, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 8376350329986113216}
+    autoPlay: 0
+    loop: 0

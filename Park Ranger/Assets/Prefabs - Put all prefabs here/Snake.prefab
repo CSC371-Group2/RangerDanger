@@ -705,9 +705,9 @@ GameObject:
   - component: {fileID: 491726399341071236}
   - component: {fileID: 491726399341071234}
   - component: {fileID: 491726399341071235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Snake
-  m_TagString: Enemy
+  m_TagString: Snake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
