@@ -7071,9 +7071,9 @@ GameObject:
   - component: {fileID: 7156460642933178854}
   - component: {fileID: 5705466263043220958}
   - component: {fileID: 7730203329938116512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wolf
-  m_TagString: Enemy
+  m_TagString: Wolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7134,7 +7134,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 0}
   eye: {fileID: 7751935329808234891}
   detectionDistance: 3
   damage: 10
