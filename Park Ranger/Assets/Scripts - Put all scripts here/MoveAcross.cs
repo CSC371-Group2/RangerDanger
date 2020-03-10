@@ -38,7 +38,7 @@ public class MoveAcross : MonoBehaviour
         if (cntr_on)
         {
             cntr += Time.deltaTime;
-            if (cntr > 5f)
+            if (cntr > 6f)
             {
                 Object.Destroy(instance_flare);
 
