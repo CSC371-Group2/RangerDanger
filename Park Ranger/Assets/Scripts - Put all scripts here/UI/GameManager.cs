@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     private float time_under_thresh = 0.0f;
 
+    private int flare_num = 2;
+
     /* current level described by the enum below 
      * mostly for readability
     */
@@ -101,13 +103,14 @@ public class GameManager : MonoBehaviour
 
     private void check_oil_thresh_time()
     {
-        if(oldOil < GameSettings.oil_thresh && !is_flare_active())
+        if(oldOil < GameSettings.oil_thresh)
         {
             time_under_thresh += Time.deltaTime;
-            if(time_under_thresh > GameSettings.oil_feedback_thres_time)
+            if(time_under_thresh > GameSettings.oil_feedback_thres_time && flare_num > 0)
             {
                 Debug.Log("flare spawn from gm");
                 start_flare();
+                flare_num--;
             }
         }
         else

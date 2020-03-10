@@ -13,7 +13,7 @@ public class MoveAcross : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // spawn_flare();
+        spawn_flare();
     }
 
     // Update is called once per frame

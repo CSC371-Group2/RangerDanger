@@ -11,8 +11,8 @@ public static class GameSettings
     public static float torchDepletion = 20f;
     public static double oil_respawn_interval = 7.5;
 
-    public static float oil_thresh = 100f;
-    public static float oil_feedback_thres_time = 5f;
+    public static float oil_thresh = 40f;
+    public static float oil_feedback_thres_time = 30f;
 
 
     //camper
