@@ -1589,7 +1589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1067655171
 Light:
   m_ObjectHideFlags: 0
@@ -2029,6 +2029,8 @@ MonoBehaviour:
   objectives: {fileID: 1720083401}
   torch: {fileID: 3041368485168702248, guid: e255734114370654688b7fdaa8457d5e, type: 3}
   deathScreen: {fileID: 427955525}
+  F_PROMPT: {fileID: 0}
+  NEED_TOOL_PROMPT: {fileID: 0}
   is_camper_following: 0
 --- !u!4 &1129888407
 Transform:
