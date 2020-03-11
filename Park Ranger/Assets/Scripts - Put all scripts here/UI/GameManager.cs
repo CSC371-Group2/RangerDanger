@@ -427,7 +427,7 @@ public class GameManager : MonoBehaviour
     {
         ArrayList objectiveList = new ArrayList();
         objectiveList.Add("Find the lost camper\n");
-        objectiveList.Add("Find the axe to chop the tree (optional)");
+        objectiveList.Add("Find the axe to chop the tree (optional)\n");
         objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
