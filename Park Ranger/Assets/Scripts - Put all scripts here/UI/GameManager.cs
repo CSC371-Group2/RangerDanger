@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
     public bool is_camper_following = false; 
     private int supply_count = 0; /* supplies gathered by player */
     private bool has_tool = false; /* true once we have the tool */
+    private bool flare_active = false;
+
+    private float time_under_thresh = 0.0f;
+
+    private int flare_num = 2;
 
     /* current level described by the enum below 
      * mostly for readability
@@ -86,12 +91,32 @@ public class GameManager : MonoBehaviour
         current = whichSceneAmI();
     }
 
+    
     // Update is called once per frame
     void Update()
     {
         check_oil_level();
+        check_oil_thresh_time();
         DisplayObjectives();
         shouldDisplayPrompts();
+    }
+
+    private void check_oil_thresh_time()
+    {
+        if(oldOil < GameSettings.oil_thresh)
+        {
+            time_under_thresh += Time.deltaTime;
+            if(time_under_thresh > GameSettings.oil_feedback_thres_time && flare_num > 0)
+            {
+                Debug.Log("flare spawn from gm");
+                start_flare();
+                flare_num--;
+            }
+        }
+        else
+        {
+            time_under_thresh = 0f;
+        }
     }
 
     private void shouldDisplayPrompts() /* display F/tool prompt for tools and barriers */
@@ -120,6 +145,29 @@ public class GameManager : MonoBehaviour
             }
         }
         
+    }
+
+    public bool is_flare_active()
+    {
+        if(flare_active)
+        {
+            flare_active = false;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void start_flare()
+    {
+        flare_active = true;
+    }
+
+    public void end_flare()
+    {
+        flare_active = false;
     }
 
     public void canF(bool state)

@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     public Transform eye;
     public float detectionDistance;
     public float damage;
+    public AudioClip attackClip;
     private Animator animator;
     private Light lantern;
 
@@ -21,12 +22,14 @@ public class EnemyController : MonoBehaviour
     private bool patrolling = true;
     private bool attacking = false;
     private bool stunned = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         player = GameObject.Find("Ranger D. Danger");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         lantern = player.transform.Find("Lantern").GetComponent<Light>();
         encounteredTorches = new List<GameObject>();
     }
@@ -90,6 +93,7 @@ public class EnemyController : MonoBehaviour
     {
         attacking = true;
         animator.SetTrigger("attack");
+        audioSource.PlayOneShot(attackClip, 0.25f);
 
         yield return new WaitForSeconds(2f);
 
