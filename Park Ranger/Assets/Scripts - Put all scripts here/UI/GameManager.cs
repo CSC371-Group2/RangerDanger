@@ -324,28 +324,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public ArrayList LoadObjectives(int scene)
+    public ArrayList LoadObjectives()
     {
         // likely will need two revise scene variables to match up
         ArrayList gameObjectives = new ArrayList(); //arraylist holding all the objectives for each level
+        level currentLevel = whichSceneAmI();
 
-        switch (scene)
+        switch (currentLevel)
         {
-            case 2:
+            case level.TUTORIAL:
                 // Tutorial objectives 
                 gameObjectives = TutorialObjectives();
                 break;
-            case 3:
+            case level.LEVEL_ONE:
                 // tutorial
                 gameObjectives = LevelOneObjectives();
                 break;
-            case 4:
+            case level.LEVEL_TWO:
                 gameObjectives = LevelTwoObjectives();
                 break;
-            case 6:
+            case level.LEVEL_THREE:
                 gameObjectives = LevelThreeObjectives();
                 break;
-            case 8:
+            case level.LEVEL_FOUR:
                 gameObjectives = LevelFourObjectives();
                 break;
             default:
