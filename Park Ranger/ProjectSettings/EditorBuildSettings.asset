@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Maze_Easy_Griffin.unity
     guid: 188dbdf4003957940bd3a35590437621
   - enabled: 1

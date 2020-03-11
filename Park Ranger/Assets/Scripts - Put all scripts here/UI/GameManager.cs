@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        objectiveList = LoadObjectives(currentScene.buildIndex);
+        objectiveList = LoadObjectives();
 
         lantern = GameObject.Find("Lantern").GetComponent<Light>();
         // deathScreen = GameObject.Find("Death Screen");
@@ -201,9 +201,13 @@ public class GameManager : MonoBehaviour
         {
             return level.TUTORIAL;
         }
-        else if (SceneManager.GetActiveScene().name == "Game")
+        else if (SceneManager.GetActiveScene().name == "Terry_Easy_Maze")
         {
             return level.LEVEL_ONE;
+        }
+        else if (SceneManager.GetActiveScene().name == "Game")
+        {
+            return level.LEVEL_TWO;
         }
         else if (SceneManager.GetActiveScene().name == "Level3")
         {
@@ -220,10 +224,13 @@ public class GameManager : MonoBehaviour
         switch(current)
         {
             case level.TUTORIAL:
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("Terry_Easy_Maze");
                 break;
             case level.LEVEL_ONE:
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("Game");
+                break;
+            case level.LEVEL_TWO:
+                SceneManager.LoadScene("Level3");
                 break;
             case level.LEVEL_THREE:
                 SceneManager.LoadScene("Menu");
@@ -240,6 +247,8 @@ public class GameManager : MonoBehaviour
             case level.TUTORIAL:
                 return is_camper_following;
             case level.LEVEL_ONE:
+                return is_camper_following;
+            case level.LEVEL_TWO:
                 return is_camper_following && supply_count == 1;
             case level.LEVEL_THREE:
                 return is_camper_following && supply_count == 2;
@@ -324,28 +333,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public ArrayList LoadObjectives(int scene)
+    public ArrayList LoadObjectives()
     {
         // likely will need two revise scene variables to match up
         ArrayList gameObjectives = new ArrayList(); //arraylist holding all the objectives for each level
+        level currentLevel = whichSceneAmI();
 
-        switch (scene)
+        switch (currentLevel)
         {
-            case 2:
+            case level.TUTORIAL:
                 // Tutorial objectives 
                 gameObjectives = TutorialObjectives();
                 break;
-            case 3:
+            case level.LEVEL_ONE:
                 // tutorial
                 gameObjectives = LevelOneObjectives();
                 break;
-            case 4:
+            case level.LEVEL_TWO:
                 gameObjectives = LevelTwoObjectives();
                 break;
-            case 6:
+            case level.LEVEL_THREE:
                 gameObjectives = LevelThreeObjectives();
                 break;
-            case 8:
+            case level.LEVEL_FOUR:
                 gameObjectives = LevelFourObjectives();
                 break;
             default:
@@ -378,14 +388,6 @@ public class GameManager : MonoBehaviour
         {
             objectiveList.Remove("Find the lost camper\n");
         }
-        //switch (eventTitle)
-        //{
-        //    case is_camper_following == true:
-        //        objectiveList.Remove("Find the lost camper\n");
-        //        break;
-        //    default:
-        //        break;
-        //}
     }
 
     public ArrayList TutorialObjectives()
@@ -408,6 +410,7 @@ public class GameManager : MonoBehaviour
     public ArrayList LevelTwoObjectives()
     {
         ArrayList objectiveList = new ArrayList();
+        objectiveList.Add("Find the survival supplies\n");
         objectiveList.Add("Find the lost camper\n");
         objectiveList.Add("Escape the forest\n");
         return objectiveList;
@@ -416,7 +419,9 @@ public class GameManager : MonoBehaviour
     public ArrayList LevelThreeObjectives()
     {
         ArrayList objectiveList = new ArrayList();
-        //add objectives
+        objectiveList.Add("Find the survival supplies\n");
+        objectiveList.Add("Find the lost camper\n");
+        objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
 
