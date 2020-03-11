@@ -27,6 +27,8 @@ public class OilCollecting : MonoBehaviour
             {
                 // disable oil
                 disableOil();
+                AudioManager.instance.Play("CollectItem");
+
             }
             else
             {

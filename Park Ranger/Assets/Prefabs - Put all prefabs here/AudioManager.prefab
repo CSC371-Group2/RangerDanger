@@ -172,3 +172,19 @@ MonoBehaviour:
     origin: {fileID: 8376350329986113216}
     autoPlay: 0
     loop: 0
+  - name: CollectItem
+    clip: {fileID: 8300000, guid: c5c6a651b64a7b042b6baa596e605070, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 8376350329986113216}
+    autoPlay: 0
+    loop: 0
+  - name: ObjectiveChecked
+    clip: {fileID: 8300000, guid: 8a953d04cdbb916488fd5ca903d2559e, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 8376350329986113216}
+    autoPlay: 0
+    loop: 0
