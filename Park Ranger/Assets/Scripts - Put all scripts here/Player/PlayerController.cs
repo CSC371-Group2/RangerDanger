@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
+        movement.Normalize();
         if (ViewCamera != null)
         {
             Vector3 direction = (Vector3.up * yMult + Vector3.back * zMult) * 2;

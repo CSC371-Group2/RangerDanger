@@ -183,6 +183,31 @@ public class GameManager : MonoBehaviour
     public void addSupply()
     {
         supply_count++;
+        int targetSupply = levelSupplyCount(whichSceneAmI());
+        if (supply_count == targetSupply)
+        {
+            objectiveList.Remove("Find the survival supplies\n");
+            objectiveList.Remove("Find the survival supplies: " + (supply_count - 1) + "/" + targetSupply + " found");
+        }
+        else
+        {
+            objectiveList.Remove("Find the survival supplies\n");
+            objectiveList.Remove("Find the survival supplies: " + (supply_count - 1) + "/" + targetSupply + " found");
+            objectiveList.Add("Find the survival supplies: " + supply_count + "/" + targetSupply + " found");
+        }
+    }
+
+    public int levelSupplyCount(level currentLevel)
+    {
+        switch (currentLevel)
+        {
+            case level.LEVEL_TWO:
+                return 1;
+            case level.LEVEL_THREE:
+                return 2;
+            default:
+                return 0;
+        }
     }
 
     public void pickupTool()
