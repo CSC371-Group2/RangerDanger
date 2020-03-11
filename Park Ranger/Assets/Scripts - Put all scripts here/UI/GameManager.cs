@@ -421,7 +421,7 @@ public class GameManager : MonoBehaviour
         ArrayList objectiveList = new ArrayList();
         objectiveList.Add("Find the survival supplies\n");
         objectiveList.Add("Find the lost camper\n");
-        objectiveList.Add("Escape the forest!\n");
+        objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
 
