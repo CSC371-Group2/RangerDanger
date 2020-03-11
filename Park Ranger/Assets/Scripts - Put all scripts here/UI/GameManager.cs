@@ -250,6 +250,7 @@ public class GameManager : MonoBehaviour
 
     public void escape()
     {
+        AudioManager.instance.Play("Escape");
         switch(current)
         {
             case level.TUTORIAL:
