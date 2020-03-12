@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         oilSlider.maxValue = GameSettings.startingOil;
         oilSlider.minValue = 0;
         oilSlider.value = GameSettings.startingOil;
-        oilPercent.text = "Oil: " + oilSlider.value + "%";
+        Time.timeScale = 1;
 
 
         current = whichSceneAmI();
