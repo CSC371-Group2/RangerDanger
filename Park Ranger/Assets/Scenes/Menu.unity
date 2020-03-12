@@ -1952,14 +1952,14 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8839e5814c0b047469650ee5cf03e4b6, type: 3}
-    m_FontSize: 60
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 5
     m_MaxSize: 60
     m_Alignment: 1
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -1969,7 +1969,9 @@ MonoBehaviour:
 
     ''space bar'' to place torch
 
-    ''F'' to interact'
+    ''F'' to interact
+
+    ''esc'' to pause game'
 --- !u!222 &1339745827
 CanvasRenderer:
   m_ObjectHideFlags: 0
