@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
 
     public Slider oilSlider;
     public TextMeshProUGUI oilPercent;
-
+    public GameObject canvas;
+    public GameObject pauseCanvas;
     public TextMeshProUGUI objectives;
     public ArrayList objectiveList;
 
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
     private float time_under_thresh = 0.0f;
     private int flare_num = 2;
 
-    public bool is_game_paused = false;
+    private bool is_game_paused = false;
+    
 
     /* current level described by the enum below 
      * mostly for readability
@@ -128,15 +130,29 @@ public class GameManager : MonoBehaviour
             Debug.Log("escape");
             if (is_game_paused == true)
             {
-                Time.timeScale = 1;
-                is_game_paused = false;
+                unpause_game();
             }
             else
             {
-                Time.timeScale = 0;
-                is_game_paused = true;
+                pause_game();
             }
         }
+    }
+
+    private void pause_game()
+    {
+        Time.timeScale = 0;
+        is_game_paused = true;
+        canvas.SetActive(false);
+        pauseCanvas.SetActive(true);
+    }
+
+    public void unpause_game()
+    {
+        Time.timeScale = 1;
+        is_game_paused = false;
+        canvas.SetActive(true);
+        pauseCanvas.SetActive(false);
     }
 
     private void shouldDisplayPrompts() /* display F/tool prompt for tools and barriers */
@@ -375,6 +391,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1;
         deathScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
