@@ -345,6 +345,7 @@ public class GameManager : MonoBehaviour
             lantern.gameObject.SetActive(false);
             deathScreen.SetActive(true);
             oilSlider.gameObject.SetActive(false);
+            Time.timeScale = 0;
         }
     }
 
