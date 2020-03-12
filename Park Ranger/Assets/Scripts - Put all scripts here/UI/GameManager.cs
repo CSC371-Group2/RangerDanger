@@ -402,7 +402,7 @@ public class GameManager : MonoBehaviour
 
         foreach (string obj in objectiveList)
         {
-            objectiveStr += obj;
+            objectiveStr += obj + "\n";
         }
 
         return objectiveStr;
