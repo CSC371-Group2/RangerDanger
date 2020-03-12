@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour
     {
         has_tool = true;
         AudioManager.instance.Play("CollectItem");
+        objectiveList.Remove("Find the axe to chop the tree (optional)\n");
     }
 
     public bool can_unlock()
@@ -406,7 +407,7 @@ public class GameManager : MonoBehaviour
 
         foreach (string obj in objectiveList)
         {
-            objectiveStr += obj;
+            objectiveStr += obj + "\n";
         }
 
         return objectiveStr;
@@ -433,7 +434,7 @@ public class GameManager : MonoBehaviour
     {
         ArrayList objectiveList = new ArrayList();
         objectiveList.Add("Find the lost camper\n");
-        objectiveList.Add("Find the axe to chop the tree (optional)");
+        objectiveList.Add("Find the axe to chop the tree (optional)\n");
         objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
