@@ -183,11 +183,14 @@ public class GameManager : MonoBehaviour
     public void addSupply()
     {
         supply_count++;
+        AudioManager.instance.Play("CollectItem");
+
         int targetSupply = levelSupplyCount(whichSceneAmI());
         if (supply_count == targetSupply)
         {
             objectiveList.Remove("Find the survival supplies\n");
             objectiveList.Remove("Find the survival supplies: " + (supply_count - 1) + "/" + targetSupply + " found");
+            AudioManager.instance.Play("ObjectiveChecked");
         }
         else
         {
@@ -213,6 +216,7 @@ public class GameManager : MonoBehaviour
     public void pickupTool()
     {
         has_tool = true;
+        AudioManager.instance.Play("CollectItem");
     }
 
     public bool can_unlock()
@@ -246,6 +250,7 @@ public class GameManager : MonoBehaviour
 
     public void escape()
     {
+        AudioManager.instance.Play("Escape");
         switch(current)
         {
             case level.TUTORIAL:
@@ -412,6 +417,7 @@ public class GameManager : MonoBehaviour
         if (is_camper_following)
         {
             objectiveList.Remove("Find the lost camper\n");
+            AudioManager.instance.Play("ObjectiveChecked");
         }
     }
 
