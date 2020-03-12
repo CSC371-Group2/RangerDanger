@@ -42,8 +42,9 @@ public class GameManager : MonoBehaviour
     private bool flare_active = false;
 
     private float time_under_thresh = 0.0f;
-
     private int flare_num = 2;
+
+    public bool is_game_paused = false;
 
     /* current level described by the enum below 
      * mostly for readability
@@ -99,6 +100,7 @@ public class GameManager : MonoBehaviour
         check_oil_thresh_time();
         DisplayObjectives();
         shouldDisplayPrompts();
+        check_pause();
     }
 
     private void check_oil_thresh_time()
@@ -116,6 +118,24 @@ public class GameManager : MonoBehaviour
         else
         {
             time_under_thresh = 0f;
+        }
+    }
+
+    private void check_pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("escape");
+            if (is_game_paused == true)
+            {
+                Time.timeScale = 1;
+                is_game_paused = false;
+            }
+            else
+            {
+                Time.timeScale = 0;
+                is_game_paused = true;
+            }
         }
     }
 
