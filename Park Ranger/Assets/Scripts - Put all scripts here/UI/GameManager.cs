@@ -213,6 +213,7 @@ public class GameManager : MonoBehaviour
     public void pickupTool()
     {
         has_tool = true;
+        objectiveList.Remove("Find the axe to chop the tree (optional)\n");
     }
 
     public bool can_unlock()
