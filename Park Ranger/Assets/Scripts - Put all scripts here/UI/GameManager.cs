@@ -105,6 +105,21 @@ public class GameManager : MonoBehaviour
         check_pause();
     }
 
+    public level currentLevel()
+    {
+        return current;
+    }
+
+    public int supplyNeeded()
+    {
+        return levelSupplyCount(current);
+    }
+
+    public int currentSupply()
+    {
+        return supply_count;
+    }
+
     private void check_oil_thresh_time()
     {
         if(oldOil < GameSettings.oil_thresh)
