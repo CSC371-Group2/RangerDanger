@@ -78,9 +78,20 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.oilSlider.value -= damage;
         StartCoroutine(increaseHeartBeat(180));
-        if (typeOfEnemy == "Wolf")
+
+        switch (typeOfEnemy)
         {
-            AudioManager.instance.Play("WolfSnarl");
+            case "Wolf":
+                AudioManager.instance.Play("WolfSnarl");
+                break;
+            case "Snake":
+                AudioManager.instance.Play("SnakeStrike");
+                break;
+            case "Bat":
+                AudioManager.instance.Play("BatAttack");
+                break;
+            default:
+                break;
         }
     }
 

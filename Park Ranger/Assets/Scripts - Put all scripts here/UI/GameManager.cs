@@ -174,6 +174,10 @@ public class GameManager : MonoBehaviour
             if (need_tool)
             {
                 NEED_TOOL_PROMPT.SetActive(true);
+                if (!objectiveList.Contains("Collect the tool to break the barrier\n") && whichSceneAmI() == level.LEVEL_THREE)
+                {
+                    objectiveList.Insert(0, "Collect the tool to break the barrier\n");
+                }
             }
             else
             {
@@ -254,6 +258,7 @@ public class GameManager : MonoBehaviour
         has_tool = true;
         AudioManager.instance.Play("CollectItem");
         objectiveList.Remove("Find the axe to chop the tree (optional)\n");
+        objectiveList.Remove("Collect the tool to break the barrier\n");
     }
 
     public bool can_unlock()
@@ -472,7 +477,7 @@ public class GameManager : MonoBehaviour
     {
         ArrayList objectiveList = new ArrayList();
         objectiveList.Add("Find the lost camper\n");
-        objectiveList.Add("Find the axe to chop the tree (optional)\n");
+        objectiveList.Add("Find the tool to break down the barrier (optional)\n");
         objectiveList.Add("Escape the forest\n");
         return objectiveList;
     }
