@@ -6,30 +6,31 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public List<Transform> waypoints;
-    protected GameObject player;
     public Transform eye;
+
     public float detectionDistance;
     public float damage;
-    public AudioClip attackClip;
-    private Animator animator;
-    private Light lantern;
-
-    private int destIndex = 0;
-    private List<GameObject> encounteredTorches;
     public float runSpeed;
     public float walkSpeed;
-    private NavMeshAgent agent;
+
+    protected GameObject player;
+
     private bool patrolling = true;
     private bool attacking = false;
     private bool stunned = false;
-    private AudioSource audioSource;
+
+    private int destIndex = 0;
+    private List<GameObject> encounteredTorches;
+    
+    private Animator animator;
+    private Light lantern;
+    private NavMeshAgent agent;
 
     void Start()
     {
         player = GameObject.Find("Ranger D. Danger");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
         lantern = player.transform.Find("Lantern").GetComponent<Light>();
         encounteredTorches = new List<GameObject>();
     }
@@ -93,7 +94,6 @@ public class EnemyController : MonoBehaviour
     {
         attacking = true;
         animator.SetTrigger("attack");
-        audioSource.PlayOneShot(attackClip, 0.25f);
 
         yield return new WaitForSeconds(2f);
 
