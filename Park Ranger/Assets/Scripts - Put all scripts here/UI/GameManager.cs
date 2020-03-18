@@ -174,6 +174,10 @@ public class GameManager : MonoBehaviour
             if (need_tool)
             {
                 NEED_TOOL_PROMPT.SetActive(true);
+                if (!objectiveList.Contains("Collect the tool to break the barrier\n") && whichSceneAmI() == level.LEVEL_THREE)
+                {
+                    objectiveList.Insert(0, "Collect the tool to break the barrier\n");
+                }
             }
             else
             {
@@ -254,6 +258,7 @@ public class GameManager : MonoBehaviour
         has_tool = true;
         AudioManager.instance.Play("CollectItem");
         objectiveList.Remove("Find the axe to chop the tree (optional)\n");
+        objectiveList.Remove("Collect the tool to break the barrier\n");
     }
 
     public bool can_unlock()
