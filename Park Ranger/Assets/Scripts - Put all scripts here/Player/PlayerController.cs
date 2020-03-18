@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         StartCoroutine(playHeartBeat());
+        movementSpeed = 4.0f;
     }
 
     void Update()
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
         movement.Normalize();
+        updateSpeed();
         if (ViewCamera != null)
         {
             Vector3 direction = (Vector3.up * yMult + Vector3.back * zMult) * 2;
@@ -51,15 +53,35 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
         if (movement != Vector3.zero)
         {
-            animator.SetBool("isWalking", true);
+            if (movementSpeed == 5.5)
+            {
+                animator.SetBool("isRunning", true);
+            }
+            else
+            {
+                animator.SetBool("isWalking", true);
+                animator.SetBool("isRunning", false);
+            }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), rotationSpeed);
         }
         else
         {
             animator.SetBool("isWalking", false);
+            animator.SetBool("isRunning", false);
         }
     }
 
+    void updateSpeed()
+    {
+        if (gameManager.oilSlider.value < 10)
+        {
+            movementSpeed = 5.5f;
+        }
+        else
+        {
+            movementSpeed = 4.0f;
+        }
+    }
 
     void onTriggerEnter(Collider other)
     {
