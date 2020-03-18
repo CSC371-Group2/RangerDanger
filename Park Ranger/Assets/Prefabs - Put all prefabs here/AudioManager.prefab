@@ -196,3 +196,19 @@ MonoBehaviour:
     origin: {fileID: 8376350329986113216}
     autoPlay: 0
     loop: 0
+  - name: SnakeStrike
+    clip: {fileID: 8300000, guid: b50eb276799b0d54aa5c591587e63b16, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 8376350329986113216}
+    autoPlay: 0
+    loop: 0
+  - name: BatAttack
+    clip: {fileID: 8300000, guid: ea59f7cb24b35c845b7c226c4c864fcc, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+    origin: {fileID: 8376350329986113216}
+    autoPlay: 0
+    loop: 0
