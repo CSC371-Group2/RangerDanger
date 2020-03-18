@@ -83,7 +83,8 @@ public class EnemyController : MonoBehaviour
             yield break;
         }
 
-        destIndex = (destIndex + 1) % waypoints.Count;
+        destIndex = patrolling ? (destIndex + 1) % waypoints.Count : destIndex;
+
         agent.SetDestination(waypoints[destIndex].position);
         agent.isStopped = true;
         yield return new WaitForSeconds(2f);
