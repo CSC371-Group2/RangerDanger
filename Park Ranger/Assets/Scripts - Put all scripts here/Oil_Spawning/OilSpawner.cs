@@ -25,7 +25,7 @@ public class OilSpawner : MonoBehaviour
     void Update()
     {
         // dat good good respawn logic ;)
-        checkShouldRespawn();
+        checkShouldRespawn(); // sets is_respawning boolean only...
         updateTimePassed();
         checkNearestRespawnTime();
     }
