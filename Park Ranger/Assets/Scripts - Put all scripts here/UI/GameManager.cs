@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
 
 
         current = whichSceneAmI();
+        pause_game();
     }
 
     
