@@ -108,7 +108,6 @@ public class EnemyController : MonoBehaviour
         agent.isStopped = true;
         animator.SetBool("isStunned", true);
         stunned = true;
-        Debug.Log("Stunned");
 
         yield return new WaitForSeconds(3f);
 
@@ -150,13 +149,10 @@ public class EnemyController : MonoBehaviour
 
     public void Stun(GameObject torch)
     {
-        Debug.Log("Idk");
         if (!encounteredTorches.Contains(torch) && !stunned)
         {
-            Debug.Log("Does not Contain");
             encounteredTorches.Add(torch);
             StartCoroutine(GetStunned());
         }
-        Debug.Log("Contain");
     }
 }
